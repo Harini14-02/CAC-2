@@ -1,0 +1,152 @@
+body {
+    background-color: black;
+	font-family: "Roboto", serif;
+    font-size :14px;
+    line-height :18px;
+	letter-spacing :2px;
+    font-weight: 400; }
+
+.nav-bar{
+    position :fixed;
+    z-index :100;
+    height: 110px;
+    top :0;
+    left :0;
+    right :0;
+    padding :0 6%;}
+
+    &.scrolled {
+		height :80px;
+		background-color: rgba(0,0,0,0.7);
+	}
+
+.nav-logo{
+    position: absolute;
+    top :50%;
+    left: 6%;
+    transform: translateY(-50%);
+	font-family: "Montserrat", serif;
+    font-size: 24px;
+    letter-spacing :0;
+    color :white;
+    transition :0.4s ease;
+    cursor: pointer;
+}
+
+.nav-links-container{
+    position: absolute;
+    top :50%;
+    right :6%;
+    transform: translateY(-50%);}
+
+.nav-link{
+    color: #999;
+    font-size: 13px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight :500;
+    padding :0 12px;
+    transition: 0.4s ease;
+    &:hover{color : white}}
+
+.about-us-section{
+    padding : 250px 0 80px;
+    color: white;
+    display: flow;
+    position : static;
+    width :65%;
+    margin :30px auto 120px;}
+
+    & orbitron{
+        margin-bottom : 100px;}
+
+.about-us-quad-container{
+    width: 85%;
+    max-width :1100px;
+    margin :0 auto 100px;
+}
+.about-us-bottom-container {
+    width: 85%;
+    max-width: 1100px;
+    margin: 0 auto 100px;
+}
+
+.quad-half{
+    width : 50%;
+    text-align : left;
+    color: white;
+    padding : 30px 20px 10px;
+    }
+
+.small-header{
+    font-family: "Montserrat", serif;
+    text-transform: uppercase;
+    font-size :20px;
+    color: white;
+    line-height: 28px;
+    letter-spacing :8px;
+    margin-bottom :20px ;
+    }
+
+.bottom-left-side{
+    text-align: left;
+    color: white;
+    width :65%;
+}
+    & .small-header{
+        color: white;
+        margin-bottom: 45px;}
+    & .lines-thing{
+        color: white;
+        margin-bottom: 45px;}
+    & p{
+        width: 90%;
+        color: white;}
+
+.bottom-right-side{
+    width :35%;
+    text-align: left;
+    color: white;
+    line-height: 30px;}
+
+    & p{
+        font-family: "Montserrat", serif;
+        text-transform: uppercase;
+        font-size :15px;
+        color: white;
+        letter-spacing: 3px;}
+
+.progress-bar{
+    color: white;
+    height :18px;
+    width :90%;
+    border :3px solid;
+    margin-bottom :10px;}
+    &::before{
+        content :"";
+        position: absolute;
+        top :0;
+        left :0;
+        right :0;
+        bottom :0;}
+    &.one::before{
+        content :"";
+        position: absolute;
+        top :0;
+        left :0;
+        bottom :0;
+        right :10%}
+    &.two::before{
+        content :"";
+        position: absolute;
+        top :0;
+        left :0;
+        bottom :0;
+        right :20%}
+    &.three::before{
+        content :"";
+        position: absolute;
+        top :0;
+        left :0;
+        bottom :0;
+        right :30%}
