@@ -1,0 +1,85 @@
+{% extends 'bases/userbase.html' %}
+{% load static %}
+{% block content %}
+    <title>Terms and Conditions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+    </style>
+<header class="site-navbar site-navbar-target" role="banner">
+      <div class="container">
+        <div class="row align-items-center position-relative">
+
+          <div class="col-3 ">
+            <div class="site-logo">
+              <a href="index " class="font-weight-bold">
+                <img src="{% static 'users/images/Blue Coming Soon Banner Landscape (1).jpg' %}" alt="Image"
+                  class="img-fluid">
+              </a>
+            </div>
+          </div>
+          <div class="col-9  text-right">
+              <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span
+                  class="icon-menu h3 text-white"></span></a></span>
+            <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                <li class="active"><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+                <li><a href="trip" class="nav-link">Stay</a></li>
+                <li><a href="blog" class="nav-link">Blog</a></li>
+                <li><a href="contacts" class="nav-link">Contact</a></li>
+                <li><a href="login" class="nav-link">Login</a></li>
+                <li><a href="register" class="nav-link">Register</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+    </header>
+
+<body>
+
+    <h1>Terms and Conditions</h1>
+
+    <p>Last Updated: [Date]</p>
+
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing or using this website, you agree to be bound by these terms and conditions.</p>
+
+    <h2>2. Intellectual Property</h2>
+    <p>The content on this website is the intellectual property of [Your Company] and is protected by copyright, trademark, and other laws.</p>
+
+    <!-- Add more sections as needed -->
+
+    <h2>3. Disclaimer</h2>
+    <p>This website is provided "as is" without any representations or warranties, express or implied.</p>
+
+    <h2>4. Limitation of Liability</h2>
+    <p>To Destinations will not be liable for any damages arising out of or in connection with the use of this website.</p>
+
+    <h2>5. Governing Law</h2>
+    <p>These terms and conditions are governed by and construed in accordance with the laws of [Your Jurisdiction].</p>
+
+    <h2>6. Changes to Terms</h2>
+    <p>[Your Company] reserves the right to modify or replace these terms at any time. Please check this page periodically for changes.</p>
+
+    <h2>Contact Information</h2>
+    <div>
+        <p>If you have any questions about these terms and conditions, please contact us at <a href="contacts" >here</a></p>
+    </div>
+    
+
+</body>
+
+</html>
+{% endblock content %}

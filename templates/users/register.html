@@ -1,0 +1,91 @@
+{% extends 'bases/userbase.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'users/css/style.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'users/fonts/icomoon/style.css' %}">
+<link rel="stylesheet" href="{% static 'users/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'users/fonts1/material-icon/css/material-design-iconic-font.min.css' %}">
+<link rel="stylesheet" href="{% static 'users/css1/style.css' %}">
+
+<header class="site-navbar site-navbar-target" role="banner">
+      <div class="container">
+        <div class="row align-items-center position-relative">
+
+          <div class="col-3 ">
+            <div class="site-logo">
+              <a href="index " class="font-weight-bold">
+                <img src="{% static 'users/images/Blue Coming Soon Banner Landscape (1).jpg' %}" alt="Image"
+                  class="img-fluid">
+              </a>
+            </div>
+          </div>
+          <div class="col-9  text-right">
+              <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span
+                  class="icon-menu h3 text-white"></span></a></span>
+            <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav ml-auto " style="font-family : Work Sans, sans-serif; font-size: 16px; font-weight :300;">
+                <li><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+                <li><a href="trip" class="nav-link">Stay</a></li>
+                <li><a href="blog" class="nav-link">Blog</a></li>
+                <li><a href="contacts" class="nav-link">Contact</a></li>
+                <li><a href="login" class="nav-link">Login</a></li>
+                <li><a href="register" class="nav-link active">Register</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+    </header>
+
+
+<body>
+
+    <div class="main">
+
+        <!-- Sign up form -->
+        <section class="signup" style="font-family: Work Sans, sans-serif;">
+            <div class="container1">
+                <div class="signup-content">
+                    <div class="signup-form" style="font-family: Work Sans, sans-serif;">
+                        <h2 class="form-title" style="font-family: Work Sans, sans-serif;">Sign Up</h2>
+                        <form method="POST" class="register-form" id="register-form">
+                            
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="name" id="name" placeholder="Your Name" style="font-family: Work Sans, sans-serif;"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email" style="font-family: Work Sans, sans-serif;"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="pass" id="pass" placeholder="Password" style="font-family: Work Sans, sans-serif;"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password" style="font-family: Work Sans, sans-serif;"/>
+                            </div>
+                            <div class="form-group" style="font-family: Work Sans, sans-serif; font-size: smaller;">
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <label for="agree-term" class="label-agree-term" ><span><span></span></span>I agree all statements in  <a href="{% url 'tnc' %}" class="term-service">Terms of service</a></label>
+                            </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register" style="font-family: Work Sans, sans-serif;"/>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="signup-image">
+                        <figure><img src="{% static 'users/images1/signup-image.jpg' %}" alt="sing up image"></figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+</div>
+</body>
+
+
+</html>
+{% endblock content %}

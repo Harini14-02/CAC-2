@@ -1,0 +1,96 @@
+{% extends 'bases/userbase.html' %}
+{% load static %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'users/css/style.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'users/fonts/icomoon/style.css' %}">
+<link rel="stylesheet" href="{% static 'users/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'users/fonts1/material-icon/css/material-design-iconic-font.min.css' %}">
+<link rel="stylesheet" href="{% static 'users/css1/style.css' %}">
+<header class="site-navbar site-navbar-target" role="banner">
+      <div class="container">
+        <div class="row align-items-center position-relative">
+
+          <div class="col-3 ">
+            <div class="site-logo">
+              <a href="index " class="font-weight-bold">
+                <img src="{% static 'users/images/Blue Coming Soon Banner Landscape (1).jpg' %}" alt="Image"
+                  class="img-fluid">
+              </a>
+            </div>
+          </div>
+          <div class="col-9  text-right">
+              <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span
+                  class="icon-menu h3 text-white"></span></a></span>
+            <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav ml-auto " style="font-family : Work Sans, sans-serif; font-size: 16px; font-weight :300;">
+                <li><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+                <li><a href="trip" class="nav-link">Stay</a></li>
+                <li><a href="blog" class="nav-link">Blog</a></li>
+                <li><a href="contacts" class="nav-link">Contact</a></li>
+                <li><a href="login" class="nav-link active">Login</a></li>
+                <li><a href="register" class="nav-link">Register</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+    </header>
+    <br><br><br>
+
+
+
+
+
+        <!-- Sing in  Form -->
+        <section class="sign-in">
+          <div class="container1">
+              <div class="signin-content">
+                  <div class="signin-image">
+                      <figure><img src="{% static 'users/images1/signin-image.jpg' %}" alt="sing up image"></figure>
+                      <a href="register" class="signup-image-link" style="font-family: Work Sans, sans-serif;">Create an account</a>
+                  </div>
+
+                  <div class="signin-form">
+                      <h2 class="form-title" style="font-family: Work Sans, sans-serif;">Log In</h2>
+                      <form method="POST" class="register-form" id="login-form">
+                        {% csrf_token %}
+                          <div class="form-group">
+                              <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                              <input type="text" name="your_name" id="your_name" placeholder="Your Name" style="font-family: Work Sans, sans-serif;"/>
+                          </div>
+                          <div class="form-group">
+                              <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                              <input type="password" name="your_pass" id="your_pass" placeholder="Password" style="font-family: Work Sans, sans-serif;"/>
+                          </div>
+                          <div class="form-group">
+                              <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                              <label for="remember-me" class="label-agree-term" style="font-family: Work Sans, sans-serif;"><span><span></span></span>Remember me</label>
+                          </div>
+                          <div class="form-group form-button">
+                              <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" style="font-family: Work Sans, sans-serif;"/>
+                          </div>
+                      </form>
+                      <div class="social-login">
+                          <span class="social-label" style="font-family: Work Sans, sans-serif;">Or login with</span>
+                          <ul class="socials">
+                              <li><a href="https://www.facebook.com/"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                              <li><a href="https://twitter.com/i/flow/login "><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                              <li><a href="https://accounts.google.com/v3/signin/identifier?service=accountsettings&continue=https%3A%2F%2Fmyaccount.google.com%2F%3Futm_source%3Dsign_in_no_continue%26pli%3D1&ec=GAlAwAE&hl=en&authuser=0&theme=glif&flowName=GlifWebSignIn&flowEntry=AddSession"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+
+<br><br>
+
+  <!-- JS -->
+  <script src="{% static 'users/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'users/js/main.js' %}"></script>
+
+</html>
+
+{% endblock content %}
