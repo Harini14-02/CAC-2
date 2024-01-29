@@ -71,11 +71,11 @@ def register(request):
 
         email = request.POST['email'].strip()
 
-        password = request.POST['password'].strip()
-        password = request.POST['password'].strip()
+        password = request.POST['pass'].strip()
+        password = request.POST['pass'].strip()
 
         new_user = User.objects.create_user(username=name, email=email)
-        new_user.set_password('password')
+        new_user.set_password('pass')
         new_user.save()
         # userDetails.objects.create(user=new_user,)
         return redirect('login')
