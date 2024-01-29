@@ -1,0 +1,190 @@
+{% extends 'bases/userbase.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'users/css/style.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'users/fonts/icomoon/style.css' %}">
+<link rel="stylesheet" href="{% static 'users/css/bootstrap.min.css' %}">
+
+    <header class="site-navbar site-navbar-target" role="banner">
+      <div class="container">
+        <div class="row align-items-center position-relative">
+
+          <div class="col-3 ">
+            <div class="site-logo">
+              <a href="index " class="font-weight-bold">
+                <img src="{% static 'users/images/Blue Coming Soon Banner Landscape (1).jpg' %}" alt="Image"
+                  class="img-fluid">
+              </a>
+            </div>
+          </div>
+          <div class="col-9  text-right">
+              <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span
+                  class="icon-menu h3 text-white"></span></a></span>
+            <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                <li><a href="{% url 'index' %}" class="nav-link" style="font-family : Work Sans, sans-serif; font-size: 16px; font-weight :300;">Home</a></li>
+                <li><a href="trip" class="nav-link">Stay</a></li>
+                <li><a href="blog" class="nav-link active">Blog</a></li>
+                <li><a href="contacts" class="nav-link">Contact</a></li>
+                <li><a href="login" class="nav-link">Login</a></li>
+                <li><a href="register" class="nav-link">Register</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+    </header>
+
+
+
+<body>
+<div class="site-section">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-md-10">
+        <div class="heading-39101 mb-5">
+          <span class="backdrop text-center">Blog</span>
+          <span class="subtitle-39191" style="font: size 40px;">Updates</span>
+          <h3 styles="font-size: 2rem;">Our Blog</h3>
+          <br><br>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="post-entry-1 h-100">
+          <a href="single.html">
+            <img src="{% static 'users/images/italy.jpg' %}" alt="Image"
+             class="img-fluid">
+          </a>
+          <div class="post-entry-1-contents">
+            
+            <h2><a href="single.html">Enchanting Beauty of Italy</a></h2>
+                <span class="meta d-inline-block mb-3">July 17, 2023 <span class="mx-2"></span> </span>
+                <p>Italy, with its timeless beauty and diverse offerings, is a destination that leaves an indelible mark on the soul. Whether you're a history buff, a food lover, or a nature enthusiast, Italy has something for everyone.</p>
+</div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="post-entry-1 h-100">
+          <a href="single.html">
+            <img src="{% static 'users/images/india1.jpg' %}" alt="Image"
+             class="img-fluid">
+          </a>
+          <div class="post-entry-1-contents">
+            
+            <h2><a href="single.html">Splendor of the Taj Maha</a></h2>
+            <span class="meta d-inline-block mb-3">June 23, 2023 <span class="mx-2"></span></span>
+            <p>The heart of India, standing as a testament to love and architectural brilliance, the Taj Mahal reigns supreme.We explore its history, design, and the love story that inspired its creation.
+            </p> </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="post-entry-1 h-100">
+          <a href="single.html">
+            <img src="{% static 'users/images/maldive.jpg' %}" alt="Image"
+             class="img-fluid">
+          </a>
+          <div class="post-entry-1-contents">
+            
+            <h2><a href="single.html">Maldives: A Paradise Found</a></h2>
+                <span class="meta d-inline-block mb-3">Febraury 14, 2023 <span class="mx-2"></span> </span>
+                <p>Maldives, where turquoise waters stretch as far as the eye can see, and pristine white-sand beaches invite you to step into a world of unparalleled beauty and tranquility. </p>
+              </div>
+        </div>
+      </div>
+    </div>
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="post-entry-1 h-100">
+          <a href="single.html">
+            <img src="{% static 'users/images\@avvvvne.jpeg' %}" alt="Image"
+             class="img-fluid">
+          </a>
+          <div class="post-entry-1-contents">
+            
+            <h2><a href="single.html">LBienvenue en France!</a></h2>
+            <span class="meta d-inline-block mb-3">November 26, 2023 <span class="mx-2"></span></span>
+            <p> A captivating journey through the heart of Europe, where history, art, and culinary delights intertwine to create an enchanting tapestry.We'll be delving into the myriad wonders that make France a timeless destination.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="post-entry-1 h-100">
+          <a href="single.html">
+            <img src="{% static 'users/images/How to travel Bora Bora on a Budget.jpeg' %}" alt="Image"
+             class="img-fluid">
+          </a>
+          <div class="post-entry-1-contents">
+            
+            <h2><a href="single.html">Bora Bora Bliss</a></h2>
+            <span class="meta d-inline-block mb-3">October 17, 2023 <span class="mx-2"></span></span>
+            <p>Bora Bora, a gem nestled in the South Pacific that promises an unparalleled blend of luxury, adventure, and natural beauty.We delve into the allure of this tropical paradise, exploring its pristine beaches.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <div class="post-entry-1 h-100">
+          <a href="single.html">
+            <img src="{% static 'users/images/The 14 Best Scenic Spots to see Cherry Blossoms in Tokyo _ The Creative Adventurer.jpeg' %}" alt="Image"
+             class="img-fluid">
+          </a>
+          <div class="post-entry-1-contents">
+            
+            <h2><a href="single.html">Vibrant Tapestry of Tokyo</a></h2>
+            <span class="meta d-inline-block mb-3">December 31, 2023 <span class="mx-2"></span></span>
+            <p>Tokyo, the pulsating heart of Japan, is a city that effortlessly blends tradition with cutting-edge innovation.We embark on a virtual journey through the diverse landscapes that make Tokyo a captivating destination.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</body>
+{% endblock content %}
+<footer class="site-footer bg-light" style="padding-bottom: 0px; padding-top: 00px"><br><br>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <h2 class="footer-heading mb-4">Quick Links</h2>
+            <ul class="list-unstyled">
+              <li><a href="index.html#aboutus">About Us</a></li>
+              <li><a href="register">Register</a></li>
+              <li><a href="blog">Blog</a></li>
+              <li><a href="contacts">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-8 ml-auto">
+            <h2 class="footer-heading mb-4">Newsletter</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt odio iure animi ullam quam, deleniti rem!</p>
+            <form action="#" class="d-flex" class="subscribe">
+              <input type="text" class="form-control mr-3" placeholder="Email">
+              <input type="submit" value="Send" class="btn btn-primary">
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    <div class="row pt-5 mt-5 text-center">
+      <div class="col-md-12">
+        <div class="border-top pt-5">
+          <p>
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> 
+        </p>
+        </div>
+      </div>
+
+    </div>
+</footer>
+
+
+
