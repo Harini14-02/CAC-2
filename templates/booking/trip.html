@@ -1,58 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>To Destination</title>
-    <link rel="stylesheet" href="css/style.css">
+{% extends 'bases/userbase.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'users/css/style.css' %}">
 <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="fonts/icomoon/style.css">
-<link rel="stylesheet" href="css/bootstrap.min.css">
-<link rel="stylesheet" href="fonts1/material-icon/css/material-design-iconic-font.min.css">
-<link rel="stylesheet" href="css1/style.css">
-<link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+<link rel="stylesheet" href="{% static 'users/fonts/icomoon/style.css' %}">
+<link rel="stylesheet" href="{% static 'users/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'users/fonts1/material-icon/css/material-design-iconic-font.min.css' %}">
+<link rel="stylesheet" href="{% static 'users/css1/style.css' %}">
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'users/img/favicon.png' %}">
 <!-- Place favicon.ico in the root directory -->
 
 <!-- CSS here -->
-<link rel="stylesheet" href="css/bootstrap1.min.css">
-<link rel="stylesheet" href="css/magnific-popup1.css">
-<link rel="stylesheet" href="css/style1.css">
-</head>
-<header class="site-navbar site-navbar-target" role="banner" style="font-family: Work Sans, sans-serif;">
-    <div class="container">
-      <div class="row align-items-center position-relative">
-  
-        <div class="col-3 ">
-          <div class="site-logo">
-            <a href="index.html" class="font-weight-bold">
-              <img src="images/Blue Coming Soon Banner Landscape (1).jpg" alt="Image" class="img-fluid">
-            </a>
-          </div>
-        </div>
-  
-        <div class="col-9  text-right">
-          <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span class="icon-menu h3 text-white"></span></a></span>
-  
-          
-  
-          <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
-            <ul class="site-menu main-menu js-clone-nav ml-auto " style="font-weight: 300;
-            font-size: 1rem; font-family: Work Sans, sans-serif;">
-              <li><a href="index.html" class="nav-link">Home</a></li>
-              <li class="active"><a href="trip.html" class="nav-link">Stay</a></li>
-              <li><a href="blog.html" class="nav-link">Blog</a></li>
-              <li><a href="contacts.html" class="nav-link">Contact</a></li>
-              <li><a href="login.html" class="nav-link">Login / Register</a></li>
-            </ul>
-          </nav>
-        </div>
-  
-        
-      </div>
-    </div>
-  
-  </header>
+<link rel="stylesheet" href="{% static 'users/css/bootstrap1.min.css' %}">
+<link rel="stylesheet" href="{% static 'users/css/magnific-popup1.css' %}">
+<link rel="stylesheet" href="{% static 'users/css/style1.css' %}">
+
 <body>
     <!doctype html>
 <html class="no-js" lang="zxx">
@@ -60,11 +23,40 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Montana</title>
+    <title>Stay</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+<header class="site-navbar site-navbar-target" role="banner">
+      <div class="container">
+        <div class="row align-items-center position-relative">
 
+          <div class="col-3 ">
+            <div class="site-logo">
+              <a href="index " class="font-weight-bold">
+                <img src="{% static 'users/images/Blue Coming Soon Banner Landscape (1).jpg' %}" alt="Image"
+                  class="img-fluid">
+              </a>
+            </div>
+          </div>
+          <div class="col-9  text-right">
+              <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span
+                  class="icon-menu h3 text-white"></span></a></span>
+            <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                <li><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+                <li><a href="trip" class="nav-link active">Stay</a></li>
+                <li><a href="blog" class="nav-link">Blog</a></li>
+                <li><a href="contacts" class="nav-link">Contact</a></li>
+                <li><a href="login" class="nav-link">Login</a></li>
+                <li><a href="register" class="nav-link">Register</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+    </header>
 <body>
 
     <header>
@@ -90,7 +82,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="slider_text text-center">
-                                <h3>Montana Resort</h3>
+                                <h3>Resort</h3>
                                 <p>Unlock to enjoy the view of Martine</p>
                             </div>
                         </div>
@@ -112,19 +104,16 @@
                             <h3>A Luxuries Hotel <br>
                                 with Nature</h3>
                         </div>
-                        <p>Suscipit libero pretium nullam potenti. Interdum, blandit phasellus consectetuer dolor ornare
-                            dapibus enim ut tincidunt rhoncus tellus sollicitudin pede nam maecenas, dolor sem. Neque
-                            sollicitudin enim. Dapibus lorem feugiat facilisi faucibus et. Rhoncus.</p>
-                        <a href="#" class="line-button">Learn More</a>
+                        <p>Welcome to our beach resort, where sun-kissed sands meet unparalleled luxury, creating an oasis of tranquility and indulgence. Nestled along the pristine shoreline, our resort offers a perfect blend of breathtaking natural beauty and world-class amenities.</p>
                     </div>
                 </div>
                 <div class="col-xl-7 col-lg-7">
                     <div class="about_thumb d-flex">
                         <div class="img_1">
-                            <img src="img/about/about_1.png" alt="">
+                            <img src="{% static 'users/img/about/about_1.png'%}" alt="">
                         </div>
                         <div class="img_2">
-                            <img src="img/about/about_2.png" alt="">
+                            <img src="{% static 'users/img/about/about_2.png'%}" alt="">
                         </div>
                     </div>
                 </div>
@@ -148,7 +137,7 @@
                 <div class="col-xl-4 col-md-4">
                     <div class="single_offers">
                         <div class="about_thumb">
-                            <img src="img/offers/1.png" alt="">
+                            <img src="{% static 'users/img/offers/1.png'%}" alt="">
                         </div>
                         <h3>Up to 35% savings on Club <br>
                             rooms and Suites</h3>
@@ -157,13 +146,12 @@
                             <li>3 Adults & 2 Children size</li>
                             <li>Sea view side</li>
                         </ul>
-                        <a href="#" class="book_now">book now</a>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-4">
                     <div class="single_offers">
                         <div class="about_thumb">
-                            <img src="img/offers/2.png" alt="">
+                            <img src="{% static 'users/img/offers/2.png'%}" alt="">
                         </div>
                         <h3>Up to 35% savings on Club <br>
                             rooms and Suites</h3>
@@ -172,13 +160,12 @@
                             <li>3 Adults & 2 Children size</li>
                             <li>Sea view side</li>
                         </ul>
-                        <a href="#" class="book_now">book now</a>
                     </div>
                 </div>
                 <div class="col-xl-4 col-md-4">
                     <div class="single_offers">
                         <div class="about_thumb">
-                            <img src="img/offers/3.png" alt="">
+                            <img src="{% static 'users/img/offers/3.png'%}" alt="">
                         </div>
                         <h3>Up to 35% savings on Club <br>
                             rooms and Suites</h3>
@@ -187,7 +174,6 @@
                             <li>3 Adults & 2 Children size</li>
                             <li>Sea view side</li>
                         </ul>
-                        <a href="#" class="book_now">book now</a>
                     </div>
                 </div>
             </div>
@@ -211,49 +197,49 @@
         <div class="rooms_here">
             <div class="single_rooms">
                 <div class="room_thumb">
-                    <img src="img/rooms/1.png" alt="">
+                    <img src="{% static 'users/img/rooms/1.png'%}" alt="">
                     <div class="room_heading d-flex justify-content-between align-items-center">
                         <div class="room_heading_inner">
-                            <span>From $250/night</span>
+                            <span>From Rs.2500/night</span>
                             <h3>Superior Room</h3>
                         </div>
-                        <a href="#" class="line-button">book now</a>
+                        <a href="{% url 'login' %}" class="line-button">book now</a>
                     </div>
                 </div>
             </div>
             <div class="single_rooms">
                 <div class="room_thumb">
-                    <img src="img/rooms/2.png" alt="">
+                    <img src="{% static 'users/img/rooms/2.png'%}" alt="">
                     <div class="room_heading d-flex justify-content-between align-items-center">
                         <div class="room_heading_inner">
-                            <span>From $250/night</span>
+                            <span>From Rs.5000/night</span>
                             <h3>Deluxe Room</h3>
                         </div>
-                        <a href="#" class="line-button">book now</a>
+                        <a href="{% url 'login' %}" class="line-button">book now</a>
                     </div>
                 </div>
             </div>
             <div class="single_rooms">
                 <div class="room_thumb">
-                    <img src="img/rooms/3.png" alt="">
+                    <img src="{% static 'users/img/rooms/3.png'%}" alt="">
                     <div class="room_heading d-flex justify-content-between align-items-center">
                         <div class="room_heading_inner">
-                            <span>From $250/night</span>
+                            <span>From Rs.4000/night</span>
                             <h3>Signature Room</h3>
                         </div>
-                        <a href="#" class="line-button">book now</a>
+                        <a href="{% url 'login' %}" class="line-button">book now</a>
                     </div>
                 </div>
             </div>
             <div class="single_rooms">
                 <div class="room_thumb">
-                    <img src="img/rooms/4.png" alt="">
+                    <img src="{% static 'users/img/rooms/4.png'%}" alt="">
                     <div class="room_heading d-flex justify-content-between align-items-center">
                         <div class="room_heading_inner">
-                            <span>From $250/night</span>
+                            <span>From Rs.4500/night</span>
                             <h3>Couple Room</h3>
                         </div>
-                        <a href="#" class="line-button">book now</a>
+                        <a href="{% url 'login' %}" class="line-button">book now</a>
                     </div>
                 </div>
             </div>
@@ -275,7 +261,7 @@
                             </div>
                             <div class="col-xl-6 col-md-6">
                                 <div class="phone_num">
-                                    <a href="#" class="mobile_no">+10 576 377 4789</a>
+                                    <p>+10 576 377 4789</p>
                                 </div>
                             </div>
                         </div>
@@ -285,7 +271,7 @@
         </div>
     </div>
     <!-- forQuery_end-->
-    <script src="js/main1.js"></script>
+    <script src="{% static 'users/js/main1.js' %}"></script>
     <script>
         $('#datepicker').datepicker({
             iconsLibrary: 'fontawesome',
@@ -307,39 +293,4 @@
 </body>
 
 
-<footer class="site-footer bg-light" style="padding-bottom: 0px; padding-top: 00px; color: #364d59 !important;font-weight: 300;font-size: 1rem;font-family: Work Sans, sans-serif;" ><br><br>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3">
-          <h2 class="footer-heading mb-4" style="font-family: Work Sans, sans-serif; font-weight: 300; font-size: 1rem;">Quick Links</h2>
-          <ul class="list-unstyled">
-            <li><a href="index.html#aboutus">About Us</a></li>
-            <li><a href="register.html">Register</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contacts.html">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-8 ml-auto" style="font-family: Work Sans, sans-serif; font-weight: 300; font-size: 1rem;">
-          <h2 class="footer-heading mb-4" style="font-family: Work Sans, sans-serif; font-weight: 300; font-size: 1rem;">Newsletter</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt odio iure animi ullam quam, deleniti rem!</p><br>
-          <form action="#" class="d-flex" class="subscribe">
-            <input type="text" class="form-control mr-3" placeholder="Email" style="font-family: Work Sans, sans-serif; font-weight: 300; font-size: 1rem;">
-            <input type="submit" style="font-family: Work Sans, sans-serif; font-weight: 300; font-size: 1rem;" value="Send" class="btn btn-primary">
-          </form>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-  <div class="row pt-5 mt-5 text-center">
-    <div class="col-md-12">
-      <div class="border-top pt-5">
-        <p>
-      Copyright &copy;<script>document.write(new Date().getFullYear());</script> 
-      </p>
-      </div>
-    </div>
-  
-  </div>
-  </div>
-  </footer>
+{% endblock content %}

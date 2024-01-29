@@ -1,5 +1,6 @@
-/* Base */
+.nav-link.active/* Base */
 html {
+  color: #71bc42;
   overflow-x: hidden; }
 
 .font-size-10 {

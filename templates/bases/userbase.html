@@ -1,0 +1,111 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'users/fonts/icomoon/style.css' %}">
+
+  <link rel="stylesheet" href="{% static 'users/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'users/css/bootstrap-datepicker.css' %}">
+  <link rel="stylesheet" href="{% static 'users/css/jquery.fancybox.min.css' %}">
+  <link rel="stylesheet" href="{% static 'users/css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'users/css/owl.theme.default.min.css' %}">
+  <link rel="stylesheet" href="{% static 'users/fonts/flaticon/font/flaticon.css' %}">
+  <link rel="stylesheet" href="{% static 'users/css/aos.css' %}">
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+  <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
+
+
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="{% static 'users/css/style.css' %}">
+
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+
+  <div class="site-wrap" id="home-section">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    {% block content %}
+
+    {% endblock content %}
+
+
+    <footer class="site-footer bg-light" style="font-family:Work Sans, sans-serif; font-size: 16px;font-weight: 300;"><br><br>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <h2 class="footer-heading mb-4" style="font-family:Work Sans, sans-serif;font-size: 16px;font-weight:500;">Quick Links</h2>
+            <ul class="list-unstyled">
+              <li><a href="index">Home</a></li>
+              <li><a href="register">Register</a></li>
+              <li><a href="blog">Blog</a></li>
+              <li><a href="contacts">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-8 ml-auto">
+            <h2 class="footer-heading mb-4" style="font-family:Work Sans, sans-serif;font-size: 16px;font-weight:500;">Newsletter</h2>
+            <p>We would love to hear from you!</p>
+            <form action="#" class="d-flex" class="subscribe">
+              <input type="text" class="form-control mr-3" placeholder="Email">
+              <input type="submit" value="Send" class="btn btn-primary" style="font-family:Work Sans, sans-serif;font-feature-settings:normal;font-kerning: auto;font-optical-sizing:auto;font-size: 12.8px;">
+            </form>
+          </div>
+
+        </div>
+      </div>
+      <div class="row pt-5 mt-5 text-center">
+        <div class="col-md-12">
+          <div class="border-top pt-5">
+            <p>
+              Copyright &copy;
+              <script>document.write(new Date().getFullYear());</script>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+      <script src="{% static 'users/js/jquery-3.3.1.min.js' %}"></script>
+      <script src="{% static 'users/js/jquery-migrate-3.0.0.js' %}"></script>
+      <script src="{% static 'users/js/popper.min.js' %}"></script>
+      <script src="{% static 'users/js/bootstrap.min.js' %}"></script>
+      <script src="{% static 'users/js/owl.carousel.min.js' %}"></script>
+      <script src="{% static 'users/js/jquery.sticky.js' %}"></script>
+      <script src="{% static 'users/js/jquery.waypoints.min.js' %}"></script>
+      <script src="{% static 'users/js/jquery.animateNumber.min.js' %}"></script>
+      <script src="{% static 'users/js/jquery.fancybox.min.js' %}"></script>
+      <script src="{% static 'users/js/jquery.stellar.min.js' %}"></script>
+      <script src="{% static 'users/js/jquery.easing.1.3.js' %}"></script>
+      <script src="{% static 'users/js/bootstrap-datepicker.min.js' %}"></script>
+      <script src="{% static 'users/js/isotope.pkgd.min.js' %}"></script>
+      <script src="{% static 'users/js/aos.js' %}"></script>
+
+      <script src="{% static 'users/js/main.js' %}"></script>
+
+
+</body>
+
+</html>

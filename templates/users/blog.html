@@ -1,45 +1,43 @@
-<link rel="stylesheet" href="css/style.css">
+{% extends 'bases/userbase.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'users/css/style.css' %}">
 <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="fonts/icomoon/style.css">
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'users/fonts/icomoon/style.css' %}">
+<link rel="stylesheet" href="{% static 'users/css/bootstrap.min.css' %}">
 
+    <header class="site-navbar site-navbar-target" role="banner">
+      <div class="container">
+        <div class="row align-items-center position-relative">
 
-<header class="site-navbar site-navbar-target" role="banner">
-
-  <div class="container">
-    <div class="row align-items-center position-relative">
-
-      <div class="col-3 ">
-        <div class="site-logo">
-          <a href="index.html" class="font-weight-bold">
-            <img src="images/Blue Coming Soon Banner Landscape (1).jpg" alt="Image" class="img-fluid">
-          </a>
+          <div class="col-3 ">
+            <div class="site-logo">
+              <a href="index " class="font-weight-bold">
+                <img src="{% static 'users/images/Blue Coming Soon Banner Landscape (1).jpg' %}" alt="Image"
+                  class="img-fluid">
+              </a>
+            </div>
+          </div>
+          <div class="col-9  text-right">
+              <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span
+                  class="icon-menu h3 text-white"></span></a></span>
+            <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                <li><a href="{% url 'index' %}" class="nav-link" style="font-family : Work Sans, sans-serif; font-size: 16px; font-weight :300;">Home</a></li>
+                <li><a href="trip" class="nav-link">Stay</a></li>
+                <li><a href="blog" class="nav-link active">Blog</a></li>
+                <li><a href="contacts" class="nav-link">Contact</a></li>
+                <li><a href="login" class="nav-link">Login</a></li>
+                <li><a href="register" class="nav-link">Register</a></li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
 
-      <div class="col-9  text-right">
-        
+    </header>
 
-        <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span class="icon-menu h3 text-white"></span></a></span>
 
-        
-
-        <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation" style="font-family: Work Sans, sans-serif;">
-          <ul class="site-menu main-menu js-clone-nav ml-auto ">
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="trip.html" class="nav-link">Stay</a></li>
-            <li class="active"><a href="blog.html" class="nav-link">Blog</a></li>
-            <li><a href="contacts.html" class="nav-link">Contact</a></li>
-            <li><a href="login.html" class="nav-link">Login / Register</a></li>
-          </ul>
-        </nav>
-      </div>
-
-      
-    </div>
-  </div>
-
-</header>
 
 <body>
 <div class="site-section">
@@ -59,7 +57,7 @@
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="post-entry-1 h-100">
           <a href="single.html">
-            <img src="images\italy.jpg" alt="Image"
+            <img src="{% static 'users/images/italy.jpg' %}" alt="Image"
              class="img-fluid">
           </a>
           <div class="post-entry-1-contents">
@@ -73,7 +71,7 @@
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="post-entry-1 h-100">
           <a href="single.html">
-            <img src="images/india1.jpg" alt="Image"
+            <img src="{% static 'users/images/india1.jpg' %}" alt="Image"
              class="img-fluid">
           </a>
           <div class="post-entry-1-contents">
@@ -88,7 +86,7 @@
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="post-entry-1 h-100">
           <a href="single.html">
-            <img src="images/maldive.jpg" alt="Image"
+            <img src="{% static 'users/images/maldive.jpg' %}" alt="Image"
              class="img-fluid">
           </a>
           <div class="post-entry-1-contents">
@@ -106,7 +104,7 @@
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="post-entry-1 h-100">
           <a href="single.html">
-            <img src="images\@avvvvne.jpeg" alt="Image"
+            <img src="{% static 'users/images\@avvvvne.jpeg' %}" alt="Image"
              class="img-fluid">
           </a>
           <div class="post-entry-1-contents">
@@ -120,7 +118,7 @@
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="post-entry-1 h-100">
           <a href="single.html">
-            <img src="images/How to travel Bora Bora on a Budget.jpeg" alt="Image"
+            <img src="{% static 'users/images/How to travel Bora Bora on a Budget.jpeg' %}" alt="Image"
              class="img-fluid">
           </a>
           <div class="post-entry-1-contents">
@@ -135,7 +133,7 @@
       <div class="col-lg-4 col-md-6 mb-4">
         <div class="post-entry-1 h-100">
           <a href="single.html">
-            <img src="images/The 14 Best Scenic Spots to see Cherry Blossoms in Tokyo _ The Creative Adventurer.jpeg" alt="Image"
+            <img src="{% static 'users/images/The 14 Best Scenic Spots to see Cherry Blossoms in Tokyo _ The Creative Adventurer.jpeg' %}" alt="Image"
              class="img-fluid">
           </a>
           <div class="post-entry-1-contents">
@@ -152,16 +150,17 @@
 </div>
 </div>
 </body>
+{% endblock content %}
 <footer class="site-footer bg-light" style="padding-bottom: 0px; padding-top: 00px"><br><br>
       <div class="container">
         <div class="row">
           <div class="col-lg-3">
             <h2 class="footer-heading mb-4">Quick Links</h2>
             <ul class="list-unstyled">
-              <li><a href="#aboutus">About Us</a></li>
-              <li><a href="register.html">Register</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="contacts.html">Contact Us</a></li>
+              <li><a href="index.html#aboutus">About Us</a></li>
+              <li><a href="register">Register</a></li>
+              <li><a href="blog">Blog</a></li>
+              <li><a href="contacts">Contact Us</a></li>
             </ul>
           </div>
           <div class="col-lg-8 ml-auto">
@@ -175,7 +174,6 @@
           
         </div>
       </div>
-    </div>
     <div class="row pt-5 mt-5 text-center">
       <div class="col-md-12">
         <div class="border-top pt-5">
@@ -186,5 +184,7 @@
       </div>
 
     </div>
-  </div>
 </footer>
+
+
+

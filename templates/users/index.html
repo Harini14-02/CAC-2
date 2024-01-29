@@ -1,83 +1,40 @@
-<!doctype html>
-<html lang="en">
+{% extends 'bases/userbase.html' %}
+{% load static %}
+{% block content %}
 
-  <head>
-    <title>Trips</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <header class="site-navbar site-navbar-target" role="banner">
+      <div class="container">
+        <div class="row align-items-center position-relative">
 
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="fonts/icomoon/style.css">
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-    <link rel="stylesheet" href="css/aos.css">
-
-    <!-- MAIN CSS -->
-    <link rel="stylesheet" href="css/style.css">
-
-  </head>
-
-  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
-    
-    <div class="site-wrap" id="home-section">
-
-      <div class="site-mobile-menu site-navbar-target">
-        <div class="site-mobile-menu-header">
-          <div class="site-mobile-menu-close mt-3">
-            <span class="icon-close2 js-menu-toggle"></span>
+          <div class="col-3 ">
+            <div class="site-logo">
+              <a href="index " class="font-weight-bold">
+                <img src="{% static 'users/images/Blue Coming Soon Banner Landscape (1).jpg' %}" alt="Image"
+                  class="img-fluid">
+              </a>
+            </div>
+          </div>
+          <div class="col-9  text-right">
+              <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span
+                  class="icon-menu h3 text-white"></span></a></span>
+            <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                <li class="active"><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+                <li><a href="trip" class="nav-link">Stay</a></li>
+                <li><a href="blog" class="nav-link">Blog</a></li>
+                <li><a href="contacts" class="nav-link">Contact</a></li>
+                <li><a href="login" class="nav-link">Login</a></li>
+                <li><a href="register" class="nav-link">Register</a></li>
+              </ul>
+            </nav>
           </div>
         </div>
-        <div class="site-mobile-menu-body"></div>
       </div>
 
-
-
-      <header class="site-navbar site-navbar-target" role="banner">
-
-        <div class="container">
-          <div class="row align-items-center position-relative">
-
-            <div class="col-3 ">
-              <div class="site-logo">
-                <a href="index.html" class="font-weight-bold">
-                  <img src="images/Blue Coming Soon Banner Landscape (1).jpg" alt="Image" class="img-fluid">
-                </a>
-              </div>
-            </div>
-
-            <div class="col-9  text-right">
-              
-
-              <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span class="icon-menu h3 text-white"></span></a></span>
-
-              
-
-              <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
-                <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                  <li class="active"><a href="index.html" class="nav-link">Home</a></li>
-                  <li><a href="trip.html" class="nav-link">Stay</a></li>
-                  <li><a href="blog.html" class="nav-link">Blog</a></li>
-                  <li><a href="contacts.html" class="nav-link">Contact</a></li>
-                  <li><a href="login.html" class="nav-link">Login / Register</a></li>
-                </ul>
-              </nav>
-            </div>
-
-            
-          </div>
-        </div>
-
-      </header>
+    </header>
 
     <div class="ftco-blocks-cover-1">
-      <div class="site-section-cover overlay" style="background-image: url('images/Beige\ and\ Brown\ \ Minimal\ Modern\ New\ Arrival\ Fashion\ Banner\ \(1\).jpg')">
+      <div class="site-section-cover overlay" style="background-image: url('{% static 'users/images/banner.jpg' %}')">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-5" data-aos="fade-right">
@@ -91,6 +48,7 @@
     </div>
 
 
+
     <div class="site-section py-5">
       <div class="container">
         <div class="row align-items-center">
@@ -99,12 +57,13 @@
               <span class="backdrop">Story</span>
               <span class="subtitle-39191">Discover Story</span>
               <h3 id="aboutus">Our Story</h3>
+              
             </div>
             <p> Our highly personalized travel planning services aim to match you with the destinations and experiences that fit your unique interests, budget and style.</p>
               <p>Whether you’re looking for an all-inclusive getaway, an adventurous backpacking journey, or a multi-generational family celebration, Travelers Paradise has you covered. Browse our extensive database of destinations, curated recommendations and special deals today. Let us take the hassle out of travel planning while you focus on counting down the days until your next great adventure!</p>
             </div>
           <div class="col-md-6" data-aos="fade-right">
-            <img src="images/traveler.jpg" alt="Image" class="img-fluid">
+            <img src="{% static 'users/images/traveler.jpg' %}" alt="Image" class="img-fluid">
           </div>
         </div>
       </div>
@@ -126,7 +85,7 @@
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
             <div class="listing-item">
               <div class="listing-image">
-                <img src="images/france.jpg" alt="Image" class="img-fluid">
+                <img src="{% static 'users/images/france.jpg' %}" alt="Image" class="img-fluid">
               </div>
               <div class="listing-item-content">
                 <a class="px-3 mb-3 category bg-primary" href="#">RS.20,000.00</a>
@@ -138,7 +97,7 @@
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
             <div class="listing-item">
               <div class="listing-image">
-                <img src="images/turkey.jpg" alt="Image" class="img-fluid">
+                <img src="{% static 'users/images/turkey.jpg' %}" alt="Image" class="img-fluid">
               </div>
               <div class="listing-item-content">
                 <a class="px-3 mb-3 category bg-primary" href="#">RS.20,000.00</a>
@@ -150,7 +109,7 @@
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
             <div class="listing-item">
               <div class="listing-image">
-                <img src="images/india.jpg" alt="Image" class="img-fluid">
+                <img src="{% static 'users/images/india.jpg' %}" alt="Image" class="img-fluid">
               </div>
               <div class="listing-item-content">
                 <a class="px-3 mb-3 category bg-primary" href="#">RS.20,000.00</a>
@@ -162,7 +121,7 @@
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
             <div class="listing-item">
               <div class="listing-image">
-                <img src="images/nz.jpg" alt="Image" class="img-fluid">
+                <img src="{% static 'users/images/nz.jpg' %}" alt="Image" class="img-fluid">
               </div>
               <div class="listing-item-content">
                 <a class="px-3 mb-3 category bg-primary" href="#">RS.20,000.00</a>
@@ -174,7 +133,7 @@
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
             <div class="listing-item">
               <div class="listing-image">
-                <img src="images/iceland.jpg" alt="Image" class="img-fluid">
+                <img src="{% static 'users/images/iceland.jpg' %}" alt="Image" class="img-fluid">
               </div>
               <div class="listing-item-content">
                 <a class="px-3 mb-3 category bg-primary" href="#">RS.20,000.00</a>
@@ -186,7 +145,7 @@
           <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
             <div class="listing-item">
               <div class="listing-image">
-                <img src="images/japan.jpg" alt="Image" class="img-fluid">
+                <img src="{% static 'users/images/japan.jpg' %}" alt="Image" class="img-fluid">
               </div>
               <div class="listing-item-content">
                 <a class="px-3 mb-3 category bg-primary" href="#">RS.20,000.00</a>
@@ -218,7 +177,7 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="person-29191 text-center">
-              <img src="images/person_1.jpg" alt="Image" class="img-fluid mb-4">
+              <img src="{% static 'users/images/person_1.jpg' %}" alt="Image" class="img-fluid mb-4">
               <div class="px-4">
                 <h2 class="mb-2">John Doe</h2>
                 <p class="caption mb-4">Staff</p>
@@ -233,7 +192,7 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="person-29191 text-center">
-              <img src="images/person_2.jpg" alt="Image" class="img-fluid mb-4">
+              <img src="{% static 'users/images/person_2.jpg' %}" alt="Image" class="img-fluid mb-4">
               <div class="px-4">
                 <h2 class="mb-2">Jean Doe</h2>
                 <p class="caption mb-4">Staff</p>
@@ -248,7 +207,7 @@
 
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="person-29191 text-center">
-              <img src="images/person_3.jpg" alt="Image" class="img-fluid mb-4">
+              <img src="{% static 'users/images/person_3.jpg' %}" alt="Image" class="img-fluid mb-4">
               <div class="px-4">
                 <h2 class="mb-2">Claire Dormey</h2>
                 <p class="caption mb-4">Staff</p>
@@ -359,7 +318,7 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="post-entry-1 h-100">
               <a href="single.html">
-                <img src="images\italy.jpg" alt="Image"
+                <img src="{% static 'users/images/italy.jpg' %}" alt="Image"
                  class="img-fluid">
               </a>
               <div class="post-entry-1-contents">
@@ -374,7 +333,7 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="post-entry-1 h-100">
               <a href="single.html">
-                <img src="images/india1.jpg" alt="Image"
+                <img src="{% static 'users/images/india1.jpg' %}" alt="Image"
                  class="img-fluid">
               </a>
               <div class="post-entry-1-contents">
@@ -390,7 +349,7 @@
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="post-entry-1 h-100">
               <a href="single.html">
-                <img src="images/maldive.jpg" alt="Image"
+                <img src="{% static 'users/images/maldive.jpg' %}" alt="Image"
                  class="img-fluid">
               </a>
               <div class="post-entry-1-contents">
@@ -409,7 +368,7 @@
     </div>
     
 
-    <div class="site-section bg-image overlay" style="background-image: url('images/hero_1.jpg')">
+    <div class="site-section bg-image overlay" style="background-image: url('{% static 'users/images/maldive.jpg' %}')">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-7 text-center">
@@ -419,63 +378,8 @@
           </div>
         </div>
       </div>
-    </div>
-    </div>
     <br><br>
     </div>
 
-<footer class="site-footer bg-light" style="padding-bottom: 0px; padding-top: 00px"><br><br>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-3">
-          <h2 class="footer-heading mb-4">Quick Links</h2>
-          <ul class="list-unstyled">
-            <li><a href="#aboutus">About Us</a></li>
-            <li><a href="register.html">Register</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contacts.html">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-8 ml-auto">
-          <h2 class="footer-heading mb-4">Newsletter</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt odio iure animi ullam quam, deleniti rem!</p>
-          <form action="#" class="d-flex" class="subscribe">
-            <input type="text" class="form-control mr-3" placeholder="Email">
-            <input type="submit" value="Send" class="btn btn-primary">
-          </form>
-        </div>
-        
-      </div>
-    </div>
-  <div class="row pt-5 mt-5 text-center">
-    <div class="col-md-12">
-      <div class="border-top pt-5">
-        <p>
-      Copyright &copy;<script>document.write(new Date().getFullYear());</script> 
-      </p>
-      </div>
-    </div>
 
-  </div>
-</footer>
-
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/jquery-migrate-3.0.0.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.sticky.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.animateNumber.min.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/jquery.stellar.min.js"></script>
-    <script src="js/jquery.easing.1.3.js"></script>
-    <script src="js/bootstrap-datepicker.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/aos.js"></script>
-
-    <script src="js/main.js"></script>
-
-  </body>
-</html>
-
+    {% endblock content %}
