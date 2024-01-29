@@ -28,7 +28,7 @@
                 <li><a href="trip" class="nav-link">Stay</a></li>
                 <li><a href="blog" class="nav-link">Blog</a></li>
                 <li><a href="contacts" class="nav-link">Contact</a></li>
-                <li><a href="login" class="nav-link active">Login</a></li>
+                <li><a href="user_login" class="nav-link active">Login</a></li>
                 <li><a href="register" class="nav-link">Register</a></li>
               </ul>
             </nav>
@@ -54,15 +54,16 @@
 
                   <div class="signin-form">
                       <h2 class="form-title" style="font-family: Work Sans, sans-serif;">Log In</h2>
+                      {{ msg }} 
                       <form method="POST" class="register-form" id="login-form">
                         {% csrf_token %}
                           <div class="form-group">
                               <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                              <input type="text" name="your_name" id="your_name" placeholder="Your Name" style="font-family: Work Sans, sans-serif;"/>
+                              <input type="text" name="username" id="username" placeholder="Your Username" required style="font-family: Work Sans, sans-serif;"/>
                           </div>
                           <div class="form-group">
                               <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                              <input type="password" name="your_pass" id="your_pass" placeholder="Password" style="font-family: Work Sans, sans-serif;"/>
+                              <input type="password" name="password" id="password" placeholder="Password" required style="font-family: Work Sans, sans-serif;"/>
                           </div>
                           <div class="form-group">
                               <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
@@ -70,6 +71,7 @@
                           </div>
                           <div class="form-group form-button">
                               <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" style="font-family: Work Sans, sans-serif;"/>
+                              
                           </div>
                       </form>
                       <div class="social-login">
