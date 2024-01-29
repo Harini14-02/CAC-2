@@ -13,11 +13,17 @@ def index(request):
     return render(request, 'users/index.html')
 
 
+def form(request):
+    return render(request, 'users/form.html')
+
+
 def home(request):
     return render(request, 'users/index.html')
 
+
 def control(request):
     return render(request, 'admin/control.html')
+
 
 def user(request):
     return render(request, 'admin/user.html')
