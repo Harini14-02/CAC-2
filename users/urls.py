@@ -12,5 +12,6 @@ urlpatterns = [
     path('tnc', views.tnc, name="tnc"),
     path('dashboard', views.dashboard, name="dashboard"),
     path('user', views.user, name="user"),
+    path('form', views.form, name="form"),
     path('control', views.control, name="control"),
 ]
