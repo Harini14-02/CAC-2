@@ -6,18 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="5f490849-d3b4-45b2-81ca-ed239d4d641e" name="Changes" comment="update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/Material Dashboard 2 by Creative Tim.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/admin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bases/userbase.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bases/userbase.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/booking/trip.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/booking/trip.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/contacts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/admin/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,6 +52,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -62,6 +66,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hsrut\OneDrive\Desktop\CAC2\CAC-2\templates\users" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\hsrut\OneDrive\Desktop\CAC2\CAC-2\css" />
     </key>
@@ -95,7 +102,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706502230407</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <option name="closed" value="true" />
+      <created>1706505899284</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1706505899284</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
