@@ -46,73 +46,29 @@
       <div class="site-mobile-menu-body"></div>
     </div>
 
-
-
-    <header class="site-navbar site-navbar-target" role="banner">
-
-      <div class="container">
-        <div class="row align-items-center position-relative">
-
-          <div class="col-3 ">
-            <div class="site-logo">
-              <a href="index " class="font-weight-bold">
-                <img src="{% static 'users/images/Blue Coming Soon Banner Landscape (1).jpg' %}" alt="Image"
-                  class="img-fluid">
-              </a>
-            </div>
-          </div>
-
-          <div class="col-9  text-right">
-
-
-            <span class="d-inline-block d-lg-none"><a href="#"
-                class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span
-                  class="icon-menu h3 text-white"></span></a></span>
-
-
-
-            <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
-              <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                <li class="active"><a href="{% url 'index' %}" class="nav-link">Home</a></li>
-                <li><a href="trip" class="nav-link">Stay</a></li>
-                <li><a href="blog" class="nav-link">Blog</a></li>
-                <li><a href="contacts" class="nav-link">Contact</a></li>
-                <li><a href="login" class="nav-link">Login</a></li>
-                <li><a href="register" class="nav-link">Register</a></li>
-              </ul>
-            </nav>
-          </div>
-
-
-        </div>
-      </div>
-
-    </header>
-
     {% block content %}
 
     {% endblock content %}
 
 
-    <footer class="site-footer bg-light" style="padding-bottom: 0px; padding-top: 00px"><br><br>
+    <footer class="site-footer bg-light" style="font-family:Work Sans, sans-serif; font-size: 16px;font-weight: 300;"><br><br>
       <div class="container">
         <div class="row">
           <div class="col-lg-3">
-            <h2 class="footer-heading mb-4">Quick Links</h2>
+            <h2 class="footer-heading mb-4" style="font-family:Work Sans, sans-serif;font-size: 16px;font-weight:500;">Quick Links</h2>
             <ul class="list-unstyled">
-              <li><a href="#aboutus">About Us</a></li>
+              <li><a href="index">Home</a></li>
               <li><a href="register">Register</a></li>
               <li><a href="blog">Blog</a></li>
               <li><a href="contacts">Contact Us</a></li>
             </ul>
           </div>
           <div class="col-lg-8 ml-auto">
-            <h2 class="footer-heading mb-4">Newsletter</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt odio iure animi ullam quam, deleniti
-              rem!</p>
+            <h2 class="footer-heading mb-4" style="font-family:Work Sans, sans-serif;font-size: 16px;font-weight:500;">Newsletter</h2>
+            <p>We would love to hear from you!</p>
             <form action="#" class="d-flex" class="subscribe">
               <input type="text" class="form-control mr-3" placeholder="Email">
-              <input type="submit" value="Send" class="btn btn-primary">
+              <input type="submit" value="Send" class="btn btn-primary" style="font-family:Work Sans, sans-serif;font-feature-settings:normal;font-kerning: auto;font-optical-sizing:auto;font-size: 12.8px;">
             </form>
           </div>
 
