@@ -30,7 +30,7 @@ def register(request):
 
 
 def admin(request):
-    return render(request, 'admin/Material Dashboard 2 by Creative Tim.html')
+    return render(request, 'admin/admin.html')
 
 
 def user_login(request):
@@ -94,4 +94,4 @@ def tnc(request):
 #     return render(request, "users/UserData.html",context)
 # return render(request, 'users/register.html')
 def dashboard(request):
-    return render(request, 'admin/templates/admin/Material Dashboard 2 by Creative Tim.html')
+    return render(request, 'admin/admin.html')
