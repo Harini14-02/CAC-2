@@ -1,0 +1,296 @@
+{% extends 'bases/userbase.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'users/css/style.css' %}">
+<link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'users/fonts/icomoon/style.css' %}">
+<link rel="stylesheet" href="{% static 'users/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'users/fonts1/material-icon/css/material-design-iconic-font.min.css' %}">
+<link rel="stylesheet" href="{% static 'users/css1/style.css' %}">
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'users/img/favicon.png' %}">
+<!-- Place favicon.ico in the root directory -->
+
+<!-- CSS here -->
+<link rel="stylesheet" href="{% static 'users/css/bootstrap1.min.css' %}">
+<link rel="stylesheet" href="{% static 'users/css/magnific-popup1.css' %}">
+<link rel="stylesheet" href="{% static 'users/css/style1.css' %}">
+
+<body>
+    <!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Stay</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<header class="site-navbar site-navbar-target" role="banner">
+      <div class="container">
+        <div class="row align-items-center position-relative">
+
+          <div class="col-3 ">
+            <div class="site-logo">
+              <a href="index " class="font-weight-bold">
+                <img src="{% static 'users/images/Blue Coming Soon Banner Landscape (1).jpg' %}" alt="Image"
+                  class="img-fluid">
+              </a>
+            </div>
+          </div>
+          <div class="col-9  text-right">
+              <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span
+                  class="icon-menu h3 text-white"></span></a></span>
+            <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+              <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                <li><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+                <li><a href="trip" class="nav-link active">Stay</a></li>
+                <li><a href="blog" class="nav-link">Blog</a></li>
+                <li><a href="contacts" class="nav-link">Contact</a></li>
+                <li><a href="login" class="nav-link">Login</a></li>
+                <li><a href="register" class="nav-link">Register</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+    </header>
+<body>
+
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center no-gutters">                        
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="slider_active owl-carousel">
+            <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text text-center">
+                                <h3>Resort</h3>
+                                <p>Unlock to enjoy the view of Martine</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+
+    <!-- about_area_start -->
+    <div class="about_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 col-lg-5">
+                    <div class="about_info">
+                        <div class="section_title mb-20px">
+                            <span>About Us</span>
+                            <h3>A Luxuries Hotel <br>
+                                with Nature</h3>
+                        </div>
+                        <p>Welcome to our beach resort, where sun-kissed sands meet unparalleled luxury, creating an oasis of tranquility and indulgence. Nestled along the pristine shoreline, our resort offers a perfect blend of breathtaking natural beauty and world-class amenities.</p>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7">
+                    <div class="about_thumb d-flex">
+                        <div class="img_1">
+                            <img src="{% static 'users/img/about/about_1.png'%}" alt="">
+                        </div>
+                        <div class="img_2">
+                            <img src="{% static 'users/img/about/about_2.png'%}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- about_area_end -->
+
+    <!-- offers_area_start -->
+    <div class="offers_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-100">
+                        <span>Our Offers</span>
+                        <h3>Ongoing Offers</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 col-md-4">
+                    <div class="single_offers">
+                        <div class="about_thumb">
+                            <img src="{% static 'users/img/offers/1.png'%}" alt="">
+                        </div>
+                        <h3>Up to 35% savings on Club <br>
+                            rooms and Suites</h3>
+                        <ul>
+                            <li>Luxaries condition</li>
+                            <li>3 Adults & 2 Children size</li>
+                            <li>Sea view side</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4">
+                    <div class="single_offers">
+                        <div class="about_thumb">
+                            <img src="{% static 'users/img/offers/2.png'%}" alt="">
+                        </div>
+                        <h3>Up to 35% savings on Club <br>
+                            rooms and Suites</h3>
+                        <ul>
+                            <li>Luxaries condition</li>
+                            <li>3 Adults & 2 Children size</li>
+                            <li>Sea view side</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4">
+                    <div class="single_offers">
+                        <div class="about_thumb">
+                            <img src="{% static 'users/img/offers/3.png'%}" alt="">
+                        </div>
+                        <h3>Up to 35% savings on Club <br>
+                            rooms and Suites</h3>
+                        <ul>
+                            <li>Luxaries condition</li>
+                            <li>3 Adults & 2 Children size</li>
+                            <li>Sea view side</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- offers_area_end -->
+
+
+    <!-- features_room_startt -->
+    <div class="features_room">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-100">
+                        <span>Featured Rooms</span>
+                        <h3>Choose a Better Room</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rooms_here">
+            <div class="single_rooms">
+                <div class="room_thumb">
+                    <img src="{% static 'users/img/rooms/1.png'%}" alt="">
+                    <div class="room_heading d-flex justify-content-between align-items-center">
+                        <div class="room_heading_inner">
+                            <span>From Rs.2500/night</span>
+                            <h3>Superior Room</h3>
+                        </div>
+                        <a href="{% url 'login' %}" class="line-button">book now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="single_rooms">
+                <div class="room_thumb">
+                    <img src="{% static 'users/img/rooms/2.png'%}" alt="">
+                    <div class="room_heading d-flex justify-content-between align-items-center">
+                        <div class="room_heading_inner">
+                            <span>From Rs.5000/night</span>
+                            <h3>Deluxe Room</h3>
+                        </div>
+                        <a href="{% url 'login' %}" class="line-button">book now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="single_rooms">
+                <div class="room_thumb">
+                    <img src="{% static 'users/img/rooms/3.png'%}" alt="">
+                    <div class="room_heading d-flex justify-content-between align-items-center">
+                        <div class="room_heading_inner">
+                            <span>From Rs.4000/night</span>
+                            <h3>Signature Room</h3>
+                        </div>
+                        <a href="{% url 'login' %}" class="line-button">book now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="single_rooms">
+                <div class="room_thumb">
+                    <img src="{% static 'users/img/rooms/4.png'%}" alt="">
+                    <div class="room_heading d-flex justify-content-between align-items-center">
+                        <div class="room_heading_inner">
+                            <span>From Rs.4500/night</span>
+                            <h3>Couple Room</h3>
+                        </div>
+                        <a href="{% url 'login' %}" class="line-button">book now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- features_room_end -->
+
+    <!-- forQuery_start -->
+    <div class="forQuery">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1 col-md-12">
+                    <div class="Query_border">
+                        <div class="row align-items-center justify-content-center">
+                            <div class="col-xl-6 col-md-6">
+                                <div class="Query_text">
+                                    <p>For Reservation 0r Query?</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-md-6">
+                                <div class="phone_num">
+                                    <p>+10 576 377 4789</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- forQuery_end-->
+    <script src="{% static 'users/js/main1.js' %}"></script>
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+             rightIcon: '<span class="fa fa-caret-down"></span>'
+         }
+        });
+        $('#datepicker2').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+             rightIcon: '<span class="fa fa-caret-down"></span>'
+         }
+
+        });
+    </script>
+
+
+
+</body>
+
+
+{% endblock content %}
