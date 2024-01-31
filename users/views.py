@@ -9,6 +9,26 @@ from django.contrib.auth.models import User
 # from .models import userDetails
 
 
+def user_login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        print(username, password)
+        user = authenticate(request, username=username, password=password)
+        if user is not None and user.is_active:
+
+            if user.is_superuser:
+                return redirect('cadmin')
+            else:
+                msg = "You are not autherized for this login"
+                return render(request, 'users/login.html', {'msg': msg})
+        else:
+            msg = "Invalid Credentials. Please try again!"
+            return render(request, 'users/login.html', {'msg': msg})
+    return render(request, 'users/login.html')
+        
+
+
 def index(request):
     return render(request, 'users/index.html')
 
@@ -28,6 +48,8 @@ def control(request):
 def user(request):
     return render(request, 'admin/user.html')
 
+def trip(request):
+    return render(request, 'booking/trip.html')
 
 def contact(request):
     return render(request, 'users/contacts.html')
@@ -41,38 +63,9 @@ def register(request):
     return render(request, 'users/register.html')
 
 
-def admin(request):
+def cadmin(request):
     return render(request, 'admin/admin.html')
 
-
-def user_login(request):
-    if request.method == "POST":
-        name = request.POST.get('your_name')
-        password = request.POST.get('your_pass')
-
-        user = authenticate(request, username=name, password=password)
-        print(user)
-        if user is not None:
-
-            if user.is_superuser:
-                login(request, user)
-                request.session['admin_id'] = user.id
-                return redirect("admin-dash")
-            elif user.is_staff:
-                login(request, user)
-                request.session['admin_id'] = user.id
-                return redirect("trip")
-            else:
-                login(request, user)
-                request.session['admin_id'] = user.id
-                return redirect("user")
-        else:
-            msg = 'invalid details'
-            return render(request, 'users/login.html', {'msg': msg})
-    else:
-        return render(request, 'users/login.html')
-
-    # return render(request, 'users/login.html')
 
 
 def register(request):
@@ -83,11 +76,11 @@ def register(request):
 
         email = request.POST['email'].strip()
 
-        password = request.POST['password'].strip()
-        password = request.POST['password'].strip()
+        password = request.POST['pass'].strip()
+        password = request.POST['pass'].strip()
 
         new_user = User.objects.create_user(username=name, email=email)
-        new_user.set_password('password')
+        new_user.set_password('pass')
         new_user.save()
         # userDetails.objects.create(user=new_user,)
         return redirect('login')
