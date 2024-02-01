@@ -16,24 +16,23 @@
             line-height: 1.6;
         }
     </style>
-<header class="site-navbar site-navbar-target" role="banner">
+<header class="site-navbar site-navbar-target" role="banner" style="width: 1000.6114px;">
       <div class="container">
         <div class="row align-items-center position-relative">
-
-          <div class="col-3 ">
+            <div class="col-3 ">
             <div class="site-logo">
-              <a href="index " class="font-weight-bold">
+              <a href="index" class="font-weight-bold">
                 <img src="{% static 'users/images/Blue Coming Soon Banner Landscape (1).jpg' %}" alt="Image"
                   class="img-fluid">
               </a>
             </div>
           </div>
-          <div class="col-9  text-right">
+          <div class="col-9  text-right" style="left:450px;">
               <span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span
                   class="icon-menu h3 text-white"></span></a></span>
             <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
               <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                <li class="active"><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+                <li><a href="{% url 'index' %}" class="nav-link">Home</a></li>
                 <li><a href="trip" class="nav-link">Stay</a></li>
                 <li><a href="blog" class="nav-link">Blog</a></li>
                 <li><a href="contacts" class="nav-link">Contact</a></li>
@@ -44,41 +43,420 @@
           </div>
         </div>
       </div>
-
     </header>
 
-<body>
+{#<body>#}
+{##}
+{#    <h1>Terms and Conditions</h1>#}
+{##}
+{#    <p>Last Updated: [Date]</p>#}
+{##}
+{#    <h2>1. Acceptance of Terms</h2>#}
+{#    <p>By accessing or using this website, you agree to be bound by these terms and conditions.</p>#}
+{##}
+{#    <h2>2. Intellectual Property</h2>#}
+{#    <p>The content on this website is the intellectual property of [Your Company] and is protected by copyright, trademark, and other laws.</p>#}
+{##}
+{#    <!-- Add more sections as needed -->#}
+{##}
+{#    <h2>3. Disclaimer</h2>#}
+{#    <p>This website is provided "as is" without any representations or warranties, express or implied.</p>#}
+{##}
+{#    <h2>4. Limitation of Liability</h2>#}
+{#    <p>To Destinations will not be liable for any damages arising out of or in connection with the use of this website.</p>#}
+{##}
+{#    <h2>5. Governing Law</h2>#}
+{#    <p>These terms and conditions are governed by and construed in accordance with the laws of [Your Jurisdiction].</p>#}
+{##}
+{#    <h2>6. Changes to Terms</h2>#}
+{#    <p>[Your Company] reserves the right to modify or replace these terms at any time. Please check this page periodically for changes.</p>#}
+{##}
+{#    <h2>Contact Information</h2>#}
+{#    <div>#}
+{#        <p>If you have any questions about these terms and conditions, please contact us at <a href="contacts" >here</a></p>#}
+{#    </div>#}
+{#    #}
+{##}
+{#</body>#}
+{#</html>#}
 
-    <h1>Terms and Conditions</h1>
+    <body>
+    <svg display="none">
+	<symbol id="arrow">
+		<polyline points="7 10,12 15,17 10" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+	</symbol>
+</svg>
+    <br><br>
+<h1>Terms and Conditions</h1>
+<div id="timeline" class="timeline">
+	<div class="btn-group">
+		<button class="btn" type="button" data-action="expand">Expand All</button>
+		<button class="btn" type="button" data-action="collapse">Collapse All</button>
+	</div>
+	<div class="timeline__item">
+		<div class="timeline__item-header">
+			<button class="timeline__arrow" type="button" id="item1" aria-labelledby="item1-name" aria-expanded="false" aria-controls="item1-ctrld" aria-haspopup="true" data-item="1">
+				<svg class="timeline__arrow-icon" viewBox="0 0 24 24" width="24px" height="24px">
+					<use href="#arrow" />
+				</svg>
+			</button>
+			<span class="timeline__dot"></span>
+			<span id="item1-name" class="timeline__meta">
+                <time class="timeline__date" datetime="2001-09-09">Last Updated, Feb 01, 2024</time><br>
+				<strong class="timeline__title">1. Acceptance of Terms</strong>
+			</span>
+		</div>
+		<div class="timeline__item-body" id="item1-ctrld" role="region" aria-labelledby="item1" aria-hidden="true">
+			<div class="timeline__item-body-content">
+				<p class="timeline__item-p">By accessing or using this website, you agree to be bound by these terms and conditions.</p>
+			</div>
+		</div>
+	</div>
+	<div class="timeline__item">
+		<div class="timeline__item-header">
+			<button class="timeline__arrow" type="button" id="item2" aria-labelledby="item2-name" aria-expanded="false" aria-controls="item2-ctrld" aria-haspopup="true" data-item="2">
+				<svg class="timeline__arrow-icon" viewBox="0 0 24 24" width="24px" height="24px">
+					<use href="#arrow" />
+				</svg>
+			</button>
+			<span class="timeline__dot"></span>
+			<span id="item2-name" class="timeline__meta">
+                <time class="timeline__date" datetime="2001-09-09">Last Updated, Feb 01, 2024</time><br>
+				<strong class="timeline__title">2. Intellectual Property</strong>
+			</span>
+		</div>
+		<div class="timeline__item-body" id="item2-ctrld" role="region" aria-labelledby="item2" aria-hidden="true">
+			<div class="timeline__item-body-content">
+				<p class="timeline__item-p">The content on this website is the intellectual property of To Destination and is protected by copyright, trademark, and other laws.</p>
+			</div>
+		</div>
+	</div>
+	<div class="timeline__item">
+		<div class="timeline__item-header">
+			<button class="timeline__arrow" type="button" id="item3" aria-labelledby="item3-name" aria-expanded="false" aria-controls="item3-ctrld" aria-haspopup="true" data-item="3">
+				<svg class="timeline__arrow-icon" viewBox="0 0 24 24" width="24px" height="24px">
+					<use href="#arrow" />
+				</svg>
+			</button>
+			<span class="timeline__dot"></span>
+			<span id="item3-name" class="timeline__meta">
+				<time class="timeline__date" datetime="2001-09-09">Last Updated, Feb 01, 2024</time><br>
+				<strong class="timeline__title">3. Disclaimer</strong>
+			</span>
+		</div>
+		<div class="timeline__item-body" id="item3-ctrld" role="region" aria-labelledby="item3" aria-hidden="true">
+			<div class="timeline__item-body-content">
+				<p class="timeline__item-p">This website is provided "as is" without any representations or warranties, express or implied.</p>
+			</div>
+		</div>
+	</div>
+	<div class="timeline__item">
+		<div class="timeline__item-header">
+			<button class="timeline__arrow" type="button" id="item4" aria-labelledby="item4-name" aria-expanded="false" aria-controls="item4-ctrld" aria-haspopup="true" data-item="4">
+				<svg class="timeline__arrow-icon" viewBox="0 0 24 24" width="24px" height="24px">
+					<use href="#arrow" />
+				</svg>
+			</button>
+			<span class="timeline__dot"></span>
+			<span id="item4-name" class="timeline__meta">
+				<time class="timeline__date" datetime="2001-09-09">Last Updated, Feb 01, 2024</time><br>
+				<strong class="timeline__title">4. Limitation of Liability</strong>
+			</span>
+		</div>
+		<div class="timeline__item-body" id="item4-ctrld" role="region" aria-labelledby="item4" aria-hidden="true">
+			<div class="timeline__item-body-content">
+                <p class="timeline__item-p">To Destinations will not be liable for any damages arising out of or in connection with the use of this website.</p>
+			</div>
+		</div>
+	</div>
+	<div class="timeline__item">
+		<div class="timeline__item-header">
+			<button class="timeline__arrow" type="button" id="item5" aria-labelledby="item5-name" aria-expanded="false" aria-controls="item5-ctrld" aria-haspopup="true" data-item="5">
+				<svg class="timeline__arrow-icon" viewBox="0 0 24 24" width="24px" height="24px">
+					<use href="#arrow" />
+				</svg>
+			</button>
+			<span class="timeline__dot"></span>
+			<span id="item5-name" class="timeline__meta">
+				<time class="timeline__date" datetime="2001-09-09">Last Updated, Feb 01, 2024</time><br>
+				<strong class="timeline__title">5. Changes to Terms</strong>
+			</span>
+		</div>
+		<div class="timeline__item-body" id="item5-ctrld" role="region" aria-labelledby="item5" aria-hidden="true">
+			<div class="timeline__item-body-content">
+				<p class="timeline__item-p">[Your Company] reserves the right to modify or replace these terms at any time. Please check this page periodically for changes.</p>
+			</div>
+		</div>
+	</div>
+	<div class="timeline__item">
+		<div class="timeline__item-header">
+			<button class="timeline__arrow" type="button" id="item6" aria-labelledby="item6-name" aria-expanded="false" aria-controls="item6-ctrld" aria-haspopup="true" data-item="6">
+				<svg class="timeline__arrow-icon" viewBox="0 0 24 24" width="24px" height="24px">
+					<use href="#arrow" />
+				</svg>
+			</button>
+			<span class="timeline__dot"></span>
+			<span id="item6-name" class="timeline__meta">
+				<time class="timeline__date" datetime="2001-09-09">Last Updated, Feb 01, 2024</time><br>
+				<strong class="timeline__title">6. Contact Information</strong>
+			</span>
+		</div>
+		<div class="timeline__item-body" id="item6-ctrld" role="region" aria-labelledby="item6" aria-hidden="true">
+			<div class="timeline__item-body-content">
+                <p class="timeline__item-p">If you have any questions about these terms and conditions, please contact us at +092492390</p>
+            </div>
+		</div>
+	</div>
+</div>
+    </body>
+    <style>
+    * {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+:root {
+	--hue: 223;
+	--bg: hsl(var(--hue),10%,90%);
+	--fg: hsl(var(--hue),10%,10%);
+	--primary: hsl(var(--hue),90%,50%);
+	--trans-dur: 0.3s;
+	--trans-timing: cubic-bezier(0.65,0,0.35,1);
+	font-size: calc(16px + (24 - 16) * (100vw - 320px) / (2560 - 320));
+}
+a {
+	color: var(--primary);
+	transition: color var(--trans-dur);
+}
+body,
+button {
+	color: var(--fg);
+	font: 1em/1.5 "IBM Plex Sans", sans-serif;
+}
+body {
+	height: 100vh;
+	transition:
+		background-color var(--trans-dur),
+		color var(--trans-dur);
+}
+h1 {
+	font-size: 2em;
+	margin: 0 0 3rem;
+	padding-top: 1.5rem;
+	text-align: center;
+}
+.btn {
+	background-color: var(--fg);
+	border-radius: 0.25em;
+	color: var(--bg);
+	cursor: pointer;
+	padding: 0.375em 0.75em;
+	transition:
+		background-color calc(var(--trans-dur) / 2) linear,
+		color var(--trans-dur);
+	-webkit-tap-highlight-color: transparent;
+}
+.btn:hover {
+	background-color: hsl(var(--hue),10%,50%);
+}
+.btn-group {
+	display: flex;
+	gap: 0.375em;
+	margin-bottom: 1.5em;
+}
+.timeline {
+	margin: auto;
+	padding: 0 1.5em;
+	width: 100%;
+	max-width: 36em;
+}
+.timeline__arrow {
+	background-color: transparent;
+	border-radius: 0.25em;
+	cursor: pointer;
+	flex-shrink: 0;
+	margin-inline-end: 0.25em;
+	outline: transparent;
+	width: 2em;
+	height: 2em;
+	transition:
+		background-color calc(var(--trans-dur) / 2) linear,
+		color var(--trans-dur);
+	-webkit-appearance: none;
+	appearance: none;
+	-webkit-tap-highlight-color: transparent;
+}
+.timeline__arrow:focus-visible,
+.timeline__arrow:hover {
+	background-color: hsl(var(--hue),10%,50%,0.4);
+}
+.timeline__arrow-icon {
+	display: block;
+	pointer-events: none;
+	transform: rotate(-90deg);
+	transition: transform var(--trans-dur) var(--trans-timing);
+	width: 100%;
+	height: auto;
+}
+.timeline__date {
+	font-size: 0.833em;
+	line-height: 2.4;
+}
+.timeline__dot {
+	background-color: currentColor;
+	border-radius: 50%;
+	display: inline-block;
+	flex-shrink: 0;
+	margin: 0.625em 0;
+	margin-inline-end: 1em;
+	position: relative;
+	width: 0.75em;
+	height: 0.75em;
+}
+.timeline__item {
+	position: relative;
+	padding-bottom: 2.25em;
+}
+.timeline__item:not(:last-child):before {
+	background-color: currentColor;
+	content: "";
+	display: block;
+	position: absolute;
+	top: 1em;
+	left: 2.625em;
+	width: 0.125em;
+	height: 100%;
+	transform: translateX(-50%);
+}
+[dir="rtl"] .timeline__arrow-icon {
+	transform: rotate(90deg);
+}
+[dir="rtl"] .timeline__item:not(:last-child):before {
+	right: 2.625em;
+	left: auto;
+	transform: translateX(50%);
+}
+.timeline__item-header {
+	display: flex;
+}
+.timeline__item-body {
+	border-radius: 0.375em;
+	overflow: hidden;
+	margin-top: 0.5em;
+	margin-inline-start: 4em;
+	height: 0;
+}
+.timeline__item-body-content {
+	background-color: hsl(var(--hue),10%,50%,0.2);
+	opacity: 0;
+	padding: 0.5em 0.75em;
+	visibility: hidden;
+	transition:
+		opacity var(--trans-dur) var(--trans-timing),
+		visibility var(--trans-dur) steps(1,end);
+}
+.timeline__meta {
+	width: 100%;
+}
+.timeline__title {
+	font-size: 1.5em;
+	line-height: 1.333;
+}
+/* Expanded state */
+.timeline__item-body--expanded {
+	height: auto;
+}
+.timeline__item-body--expanded .timeline__item-body-content {
+	opacity: 1;
+	visibility: visible;
+	transition-delay: var(--trans-dur), 0s;
+}
+.timeline__arrow[aria-expanded="true"] .timeline__arrow-icon {
+	transform: rotate(0);
+}
 
-    <p>Last Updated: [Date]</p>
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: hsl(var(--hue),10%,10%);
+		--fg: hsl(var(--hue),10%,90%);
+		--primary: hsl(var(--hue),90%,70%);
+	}
+}
+    </style>
+    <script>
+    window.addEventListener("DOMContentLoaded",() => {
+	const ctl = new CollapsibleTimeline("#timeline");
+});
 
-    <h2>1. Acceptance of Terms</h2>
-    <p>By accessing or using this website, you agree to be bound by these terms and conditions.</p>
+class CollapsibleTimeline {
+	constructor(el) {
+		this.el = document.querySelector(el);
 
-    <h2>2. Intellectual Property</h2>
-    <p>The content on this website is the intellectual property of [Your Company] and is protected by copyright, trademark, and other laws.</p>
+		this.init();
+	}
+	init() {
+		this.el?.addEventListener("click",this.itemAction.bind(this));
+	}
+	animateItemAction(button,ctrld,contentHeight,shouldCollapse) {
+		const expandedClass = "timeline__item-body--expanded";
+		const animOptions = {
+			duration: 300,
+			easing: "cubic-bezier(0.65,0,0.35,1)"
+		};
 
-    <!-- Add more sections as needed -->
+		if (shouldCollapse) {
+			button.ariaExpanded = "false";
+			ctrld.ariaHidden = "true";
+			ctrld.classList.remove(expandedClass);
+			animOptions.duration *= 2;
+			this.animation = ctrld.animate([
+				{ height: `${contentHeight}px` },
+				{ height: `${contentHeight}px` },
+				{ height: "0px" }
+			],animOptions);
+		} else {
+			button.ariaExpanded = "true";
+			ctrld.ariaHidden = "false";
+			ctrld.classList.add(expandedClass);
+			this.animation = ctrld.animate([
+				{ height: "0px" },
+				{ height: `${contentHeight}px` }
+			],animOptions);
+		}
+	}
+	itemAction(e) {
+		const { target } = e;
+		const action = target?.getAttribute("data-action");
+		const item = target?.getAttribute("data-item");
 
-    <h2>3. Disclaimer</h2>
-    <p>This website is provided "as is" without any representations or warranties, express or implied.</p>
+		if (action) {
+			const targetExpanded = action === "expand" ? "false" : "true";
+			const buttons = Array.from(this.el?.querySelectorAll(`[aria-expanded="${targetExpanded}"]`));
+			const wasExpanded = action === "collapse";
 
-    <h2>4. Limitation of Liability</h2>
-    <p>To Destinations will not be liable for any damages arising out of or in connection with the use of this website.</p>
+			for (let button of buttons) {
+				const buttonID = button.getAttribute("data-item");
+				const ctrld = this.el?.querySelector(`#item${buttonID}-ctrld`);
+				const contentHeight = ctrld.firstElementChild?.offsetHeight;
 
-    <h2>5. Governing Law</h2>
-    <p>These terms and conditions are governed by and construed in accordance with the laws of [Your Jurisdiction].</p>
+				this.animateItemAction(button,ctrld,contentHeight,wasExpanded);
+			}
 
-    <h2>6. Changes to Terms</h2>
-    <p>[Your Company] reserves the right to modify or replace these terms at any time. Please check this page periodically for changes.</p>
+		} else if (item) {
+			const button = this.el?.querySelector(`[data-item="${item}"]`);
+			const expanded = button?.getAttribute("aria-expanded");
 
-    <h2>Contact Information</h2>
-    <div>
-        <p>If you have any questions about these terms and conditions, please contact us at <a href="contacts" >here</a></p>
-    </div>
-    
+			if (!expanded) return;
 
-</body>
-</html>
+			const wasExpanded = expanded === "true";
+			const ctrld = this.el?.querySelector(`#item${item}-ctrld`);
+			const contentHeight = ctrld.firstElementChild?.offsetHeight;
+
+			this.animateItemAction(button,ctrld,contentHeight,wasExpanded);
+		}
+	}
+}
+    </script>
 {% endblock content %}
