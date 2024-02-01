@@ -1,17 +1,19 @@
-{% extends 'bases/userbase.html' %}
 {% load static %}
-{% block content %}
-
-
 
 <!DOCTYPE HTML>
+<!--
+	Aesthetic by gettemplates.co
+	Twitter: http://twitter.com/gettemplateco
+	URL: http://gettemplates.co
+-->
 <html>
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Traveler &mdash; Free Website Template, Free HTML5 Template by GetTemplates.co</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by GetTemplates.co" />
+	<meta name="description" co
+	ntent="Free HTML5 Website Template by GetTemplates.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 	<meta name="author" content="GetTemplates.co" />
 
@@ -25,7 +27,6 @@
 	<meta name="twitter:image" content="" />
 	<meta name="twitter:url" content="" />
 	<meta name="twitter:card" content="" />
-
 
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
 	
@@ -52,42 +53,9 @@
 	<link rel="stylesheet" href="{% static 'booking/css/style.css' %}">
 
 	<!-- Modernizr JS -->
-	<script src="{% static 'booking/js/modernizr-2.6.2.min.js' %}"></script>
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
 
-	<script src="{% static 'booking/js/respond.min.js' %}"></script>
-    <header class="site-navbar site-navbar-target" role="banner">
-		<div class="container">
-		  <div class="row align-items-center position-relative">
-  
-			<div class="col-3 ">
-			  <div class="site-logo">
-				<a href="index" class="font-weight-bold">
-				  <img src="{% static 'users/images/Blue Coming Soon Banner Landscape (1).jpg' %}" alt="Image"
-					class="img-fluid">
-				</a>
-			  </div>
-			</div>
-			<div class="col-9  text-right">
-				<span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span
-					class="icon-menu h3 text-white"></span></a></span>
-			  <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
-				<ul class="site-menu main-menu js-clone-nav ml-auto ">
-				  <li><a href="{% url 'index' %}" class="nav-link">Home</a></li>
-				  <li><a href="trip" class="nav-link">Stay</a></li>
-				  <li><a href="blog" class="nav-link">Blog</a></li>
-				  <li><a href="contacts" class="nav-link">Contact</a></li>
-				  <li><a href="user_login" class="nav-link">Login</a></li>
-				  <li><a href="register" class="nav-link">Register</a></li>
-				</ul>
-			  </nav>
-			</div>
-		  </div>
-		</div>
-  
-	  </header></head>
-
-
-
+	<script src="{% static 'js/respond.min.js' %}"></script>	
 	<body>
 		
 	<div class="gtco-loader"></div>
@@ -127,17 +95,17 @@
 									<div class="tab-content">
 										<div class="tab-content-inner active" data-content="signup">
 											<h3>Book Your Trip</h3>
-											<form action="#" method="post">
+											<form action="#">
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="fullname">Your Name</label>
-														<input type="text" id="fullname" class="form-control" name="name">
+														<input type="text" id="fullname" class="form-control">
 													</div>
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="activities">Activities</label>
-														<select id="activities" class="form-control" name="activity">
+														<select name="#" id="activities" class="form-control">
 															<option value="">Activities</option>
 															<option value="">Hiking</option>
 															<option value="">Caving</option>
@@ -148,7 +116,7 @@
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="destination">Destination</label>
-														<select name="destination" id="destination" class="form-control" >
+														<select name="#" id="destination" class="form-control">
 															<option value="">Philippines</option>
 															<option value="">USA</option>
 															<option value="">Australia</option>
@@ -160,7 +128,7 @@
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="date-start">Date Travel</label>
-														<input type="date" id="date-start" class="form-control" name="date">
+														<input type="text" id="date-start" class="form-control">
 													</div>
 												</div>
 
@@ -171,17 +139,20 @@
 												</div>
 											</form>	
 										</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        </section>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+									</section>
 
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+							
+					
+				</div>
+			</div>
+		</div>
+	</header>
 	
 	<div class="gtco-section">
 		<div class="gtco-container">
@@ -322,7 +293,8 @@
 	</div>
 
 
-	<div class="gtco-cover gtco-cover-sm" style="background-image: url({% static  'booking/images/bg03.jpg' %});  data-stellar-background-ratio:0.5">
+	<div class="gtco-cover gtco-cover-sm" style="background-image: url('{% static 'booking/images/bg03.jpg' %}')">
+  data-stellar-background-ratio="0.5">
 		<div class="overlay"></div>
 		<div class="gtco-container text-center">
 			<div class="display-t">
@@ -376,6 +348,74 @@
 		</div>
 	</div>
 
+	<footer id="gtco-footer" role="contentinfo">
+		<div class="gtco-container">
+			<div class="row row-p	b-md">
+
+				<div class="col-md-4">
+					<div class="gtco-widget">
+						<h3>About Us</h3>
+						<p>
+							We believe that travel is not just about reaching a destination; it's about creating memories that last a lifetime. 
+							Our mission is to inspire and empower travelers to embark on meaningful journeys, unlocking the world's wonders with ease and excitement.</p>
+					</div>
+				</div>
+
+				<div class="col-md-2 col-md-push-1">
+					<div class="gtco-widget">
+						<h3>Destination</h3>
+						<ul class="gtco-footer-links">
+							<li><a href="#">Europe</a></li>
+							<li><a href="#">Australia</a></li>
+							<li><a href="#">Asia</a></li>
+							<li><a href="#">Canada</a></li>
+							<li><a href="#">Dubai</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-2 col-md-push-1">
+					<div class="gtco-widget">
+						<h3>Hotels</h3>
+						<ul class="gtco-footer-links">
+							<li><a href="#">Luxe Hotel</a></li>
+							<li><a href="#">Italy 5 Star hotel</a></li>
+							<li><a href="#">Dubai Hotel</a></li>
+							<li><a href="#">Deluxe Hotel</a></li>
+							<li><a href="#">BoraBora Hotel</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-3 col-md-push-1">
+					<div class="gtco-widget">
+						<h3>Get In Touch</h3>
+						<ul class="gtco-quick-contact">
+							<li><a href="#"><i class="icon-phone"></i> +1 234 567 890</a></li>
+							<li><a href="#"><i class="icon-mail2"></i> info@GetTemplates.co</a></li>
+							<li><a href="#"><i class="icon-chat"></i> Live Chat</a></li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="row copyright">
+				<div class="col-md-12">
+					
+					<p class="pull-right">
+						<ul class="gtco-social-icons pull-right">
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-linkedin"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
 	<!-- </div> -->
 
 	</div>
@@ -413,7 +453,3 @@
 
 	</body>
 	</html>
-
-	{% endblock content %}
-
-
