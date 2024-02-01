@@ -13,6 +13,7 @@ def cadmin(request):
 def login(request):
     return render(request, 'users/login.html')
 
+
 def booking_index(request):
     if request.method == 'post':
         name = request.POST['name']
@@ -34,6 +35,8 @@ def user_login(request):
 
             if user.is_superuser:
                 return redirect('cadmin')
+            elif user.is_user:
+                return redirect('booking_index')
             else:
                 msg = "You are not autherized for this login"
                 return render(request, 'users/login.html', {'msg': msg})
