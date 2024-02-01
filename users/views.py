@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-
+from django.contrib.auth.hashers import make_password
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.db import models
@@ -13,17 +13,18 @@ from django.db import models
 
 def user_login(request):
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        print(username, password)
-        user = authenticate(request, username=username, password=password)
-        if user is not None and user.is_active:
-
+        username1 = request.POST['username']
+        password1 = request.POST['password']
+        print(username1, password1)
+        user = authenticate(request, username=username1, password=password1)
+        print(user)
+        if user is not None:
             if user.is_superuser:
+                login(request,user)
                 return redirect('cadmin')
             else:
-                msg = "You are not autherized for this login"
-                return render(request, 'users/login.html', {'msg': msg})
+                login(request,user)
+                return redirect('index')  
         else:
             msg = "Invalid Credentials. Please try again!"
             return render(request, 'users/login.html', {'msg': msg})
@@ -34,7 +35,7 @@ def user_login(request):
 def index(request):
     return render(request, 'users/index.html')
 
-
+@login_required(login_url='user_login')
 def form(request):
     return render(request, 'users/form.html')
 
@@ -75,10 +76,8 @@ def register(request):
         name = request.POST['name'].strip()
         email = request.POST['email'].strip()
         password = request.POST['pass'].strip()
-        cpassword = request.POST['cpass'].strip()
 
-        new_user = User.objects.create_user(username=name, email=email)
-        new_user.set_password('pass')
+        new_user = User.objects.create_user(username=name, email=email, password=password)
         new_user.save()
         # userDetails.objects.create(user=new_user,)
         return redirect('user_login')
