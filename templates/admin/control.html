@@ -1,10 +1,151 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Blog - Control</title>
-</head>
-<body>
+{% extends 'bases/userbase.html' %}
+{% load static %}
+{% block content %}
 
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blog Admin Dashboard</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+            }
+    
+            header {
+                background-color: #333;
+                color: #fff;
+                padding: 10px;
+                text-align: center;
+            }
+    
+            nav {
+                background-color: #444;
+                color: #fff;
+                padding: 10px;
+                text-align: center;
+            }
+    
+            .container {
+                margin: 20px;
+            }
+    
+            section {
+                margin-top: 20px;
+            }
+    
+            .dashboard-section {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 5px;
+            }
+    
+            h2 {
+                color: #333;
+            }
+    
+            .blog-post {
+                border: 1px solid #ddd;
+                padding: 10px;
+                margin-bottom: 10px;
+            }
+    
+            .blog-post a {
+                text-decoration: none;
+                color: #007bff;
+            }
+    
+            .add-post-btn {
+                background-color: #4caf50;
+                color: #fff;
+                padding: 10px 20px;
+                text-decoration: none;
+                border-radius: 5px;
+                display: inline-block;
+                margin-top: 10px;
+            }
+    
+            .user-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+    
+            .user-list li {
+                border: 1px solid #ddd;
+                padding: 10px;
+                margin-bottom: 10px;
+                background-color: #fff;
+                border-radius: 5px;
+            }
+    
+            .category-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+    
+            .category-list li {
+                border: 1px solid #ddd;
+                padding: 10px;
+                margin-bottom: 10px;
+                background-color: #fff;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Blog Admin Dashboard</h1>
+        </header>
+    
+        <nav>
+            <a href="#">Home</a> | 
+            <a href="#">Posts</a> | 
+            <a href="#">Categories</a> | 
+            <a href="#">Users</a>
+        </nav>
+    
+        <div class="container">
+            <section class="dashboard-section">
+                <h2>Blog Posts</h2>
+                <div class="blog-post">
+                    <h3><a href="#">Post Title</a></h3>
+                    <p>Published on: <span>January 1, 2023</span></p>
+                    <p>Author: <span>Admin</span></p>
+                    <p>Category: <span>Tech</span></p>
+                    <p>Content: Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                </div>
+                <!-- Add more blog posts as needed -->
+                <a href="#" class="add-post-btn">Add New Post</a>
+            </section>
+    
+            <section class="dashboard-section">
+                <h2>Users</h2>
+                <ul class="user-list">
+                    <li>User 1</li>
+                    <li>User 2</li>
+                    <!-- Add more users as needed -->
+                </ul>
+            </section>
+    
+            <section class="dashboard-section">
+                <h2>Categories</h2>
+                <ul class="category-list">
+                    <li>Category 1</li>
+                    <li>Category 2</li>
+                    <!-- Add more categories as needed -->
+                </ul>
+            </section>
+        </div>
+    </body>
+    </html>
+    
 </body>
-</html>
+{% endblock content %}
