@@ -1,12 +1,7 @@
-
 {% load static %}
 
+
 <!DOCTYPE HTML>
-<!--
-	Aesthetic by gettemplates.co
-	Twitter: http://twitter.com/gettemplateco
-	URL: http://gettemplates.co
--->
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -57,6 +52,39 @@
 	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
 
 	<script src="{% static 'js/respond.min.js' %}"></script>	
+    <header class="site-navbar site-navbar-target" role="banner">
+		<div class="container">
+		  <div class="row align-items-center position-relative">
+  
+			<div class="col-3 ">
+			  <div class="site-logo">
+				<a href="index" class="font-weight-bold">
+				  <img src="{% static 'users/images/Blue Coming Soon Banner Landscape (1).jpg' %}" alt="Image"
+					class="img-fluid">
+				</a>
+			  </div>
+			</div>
+			<div class="col-9  text-right">
+				<span class="d-inline-block d-lg-none"><a href="#" class="text-white site-menu-toggle js-menu-toggle py-5 text-white"><span
+					class="icon-menu h3 text-white"></span></a></span>
+			  <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
+				<ul class="site-menu main-menu js-clone-nav ml-auto ">
+				  <li><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+				  <li><a href="trip" class="nav-link">Stay</a></li>
+				  <li><a href="blog" class="nav-link">Blog</a></li>
+				  <li><a href="contacts" class="nav-link">Contact</a></li>
+				  <li><a href="user_login" class="nav-link">Login</a></li>
+				  <li><a href="register" class="nav-link">Register</a></li>
+				</ul>
+			  </nav>
+			</div>
+		  </div>
+		</div>
+  
+	  </header>
+  
+
+
 	<body>
 		
 	<div class="gtco-loader"></div>
@@ -349,74 +377,6 @@
 		</div>
 	</div>
 
-	<footer id="gtco-footer" role="contentinfo">
-		<div class="gtco-container">
-			<div class="row row-p	b-md">
-
-				<div class="col-md-4">
-					<div class="gtco-widget">
-						<h3>About Us</h3>
-						<p>
-							We believe that travel is not just about reaching a destination; it's about creating memories that last a lifetime. 
-							Our mission is to inspire and empower travelers to embark on meaningful journeys, unlocking the world's wonders with ease and excitement.</p>
-					</div>
-				</div>
-
-				<div class="col-md-2 col-md-push-1">
-					<div class="gtco-widget">
-						<h3>Destination</h3>
-						<ul class="gtco-footer-links">
-							<li><a href="#">Europe</a></li>
-							<li><a href="#">Australia</a></li>
-							<li><a href="#">Asia</a></li>
-							<li><a href="#">Canada</a></li>
-							<li><a href="#">Dubai</a></li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="col-md-2 col-md-push-1">
-					<div class="gtco-widget">
-						<h3>Hotels</h3>
-						<ul class="gtco-footer-links">
-							<li><a href="#">Luxe Hotel</a></li>
-							<li><a href="#">Italy 5 Star hotel</a></li>
-							<li><a href="#">Dubai Hotel</a></li>
-							<li><a href="#">Deluxe Hotel</a></li>
-							<li><a href="#">BoraBora Hotel</a></li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-md-push-1">
-					<div class="gtco-widget">
-						<h3>Get In Touch</h3>
-						<ul class="gtco-quick-contact">
-							<li><a href="#"><i class="icon-phone"></i> +1 234 567 890</a></li>
-							<li><a href="#"><i class="icon-mail2"></i> info@GetTemplates.co</a></li>
-							<li><a href="#"><i class="icon-chat"></i> Live Chat</a></li>
-						</ul>
-					</div>
-				</div>
-
-			</div>
-
-			<div class="row copyright">
-				<div class="col-md-12">
-					
-					<p class="pull-right">
-						<ul class="gtco-social-icons pull-right">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-						</ul>
-					</p>
-				</div>
-			</div>
-
-		</div>
-	</footer>
 	<!-- </div> -->
 
 	</div>
@@ -454,5 +414,6 @@
 
 	</body>
 	</html>
+	
 
 
