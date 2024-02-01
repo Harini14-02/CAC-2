@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
+from django.db import models
+
 
 
 # from .models import userDetails
@@ -69,21 +71,17 @@ def cadmin(request):
 
 
 def register(request):
-    errors = {}
     if request.method == 'POST':
-
         name = request.POST['name'].strip()
-
         email = request.POST['email'].strip()
-
         password = request.POST['pass'].strip()
-        password = request.POST['pass'].strip()
+        cpassword = request.POST['cpass'].strip()
 
         new_user = User.objects.create_user(username=name, email=email)
         new_user.set_password('pass')
         new_user.save()
         # userDetails.objects.create(user=new_user,)
-        return redirect('login')
+        return redirect('user_login')
     else:
         return render(request, 'users/register.html')
 
