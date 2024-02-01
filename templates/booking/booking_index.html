@@ -1,19 +1,13 @@
 {% load static %}
 
 <!DOCTYPE HTML>
-<!--
-	Aesthetic by gettemplates.co
-	Twitter: http://twitter.com/gettemplateco
-	URL: http://gettemplates.co
--->
 <html>
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Traveler &mdash; Free Website Template, Free HTML5 Template by GetTemplates.co</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" co
-	ntent="Free HTML5 Website Template by GetTemplates.co" />
+	<meta name="description" content="Free HTML5 Website Template by GetTemplates.co" />
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 	<meta name="author" content="GetTemplates.co" />
 
@@ -52,10 +46,13 @@
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="{% static 'booking/css/style.css' %}">
 
+
 	<!-- Modernizr JS -->
 	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
 
-	<script src="{% static 'js/respond.min.js' %}"></script>	
+	<script src="{% static 'js/respond.min.js' %}"></script>
+
+
 	<body>
 		
 	<div class="gtco-loader"></div>
@@ -68,11 +65,19 @@
 		<div class="gtco-container">
 			
 			<div class="row">
-				<div class="col-sm-4 col-xs-12">
-					<div id="gtco-logo"><a href="index.html">Traveler <em>.</em></a></div>
-				</div>
+				<div class="col-sm-6  col-xs-12" style="padding-left: 30px;margin-left: 700px;">
+                    <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation" >
+                          <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                            <li><a href="{% url 'index' %}" class="nav-link" style="font-size:20px;">Home</a></li>
+                            <li><a href="trip" class="nav-link" style="font-size:20px;">Stay</a></li>
+                            <li><a href="blog" class="nav-link" style="font-size:20px;">Blog</a></li>
+                            <li><a href="contacts" class="nav-link" style="font-size:20px;">Contact</a></li>
+                            <li><a href="user_login" class="nav-link" style="font-size:20px;">Login</a></li>
+                            <li><a href="register" class="nav-link" style="font-size:20px;">Register</a></li>
+                          </ul>
+                    </nav>
+                </div>
 			</div>
-			
 		</div>
 	</nav>
 	
@@ -81,13 +86,10 @@
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-md-12 col-md-offset-0 text-left">
-					
-
 					<div class="row row-mt-15em">
 						<div class="col-md-7 mt-text animate-box" data-animate-effect="fadeInUp">
 							<h1>Planing Trip To Anywhere in The World?</h1>	
 						</div>
-
 						<section id="tab">
 						<div class="col-md-4 col-md-push-1 animate-box" data-animate-effect="fadeInRight">
 							<div class="form-wrap">
@@ -346,78 +348,6 @@
 					
 			</div>
 		</div>
-	</div>
-
-	<footer id="gtco-footer" role="contentinfo">
-		<div class="gtco-container">
-			<div class="row row-p	b-md">
-
-				<div class="col-md-4">
-					<div class="gtco-widget">
-						<h3>About Us</h3>
-						<p>
-							We believe that travel is not just about reaching a destination; it's about creating memories that last a lifetime. 
-							Our mission is to inspire and empower travelers to embark on meaningful journeys, unlocking the world's wonders with ease and excitement.</p>
-					</div>
-				</div>
-
-				<div class="col-md-2 col-md-push-1">
-					<div class="gtco-widget">
-						<h3>Destination</h3>
-						<ul class="gtco-footer-links">
-							<li><a href="#">Europe</a></li>
-							<li><a href="#">Australia</a></li>
-							<li><a href="#">Asia</a></li>
-							<li><a href="#">Canada</a></li>
-							<li><a href="#">Dubai</a></li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="col-md-2 col-md-push-1">
-					<div class="gtco-widget">
-						<h3>Hotels</h3>
-						<ul class="gtco-footer-links">
-							<li><a href="#">Luxe Hotel</a></li>
-							<li><a href="#">Italy 5 Star hotel</a></li>
-							<li><a href="#">Dubai Hotel</a></li>
-							<li><a href="#">Deluxe Hotel</a></li>
-							<li><a href="#">BoraBora Hotel</a></li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="col-md-3 col-md-push-1">
-					<div class="gtco-widget">
-						<h3>Get In Touch</h3>
-						<ul class="gtco-quick-contact">
-							<li><a href="#"><i class="icon-phone"></i> +1 234 567 890</a></li>
-							<li><a href="#"><i class="icon-mail2"></i> info@GetTemplates.co</a></li>
-							<li><a href="#"><i class="icon-chat"></i> Live Chat</a></li>
-						</ul>
-					</div>
-				</div>
-
-			</div>
-
-			<div class="row copyright">
-				<div class="col-md-12">
-					
-					<p class="pull-right">
-						<ul class="gtco-social-icons pull-right">
-							<li><a href="#"><i class="icon-twitter"></i></a></li>
-							<li><a href="#"><i class="icon-facebook"></i></a></li>
-							<li><a href="#"><i class="icon-linkedin"></i></a></li>
-							<li><a href="#"><i class="icon-dribbble"></i></a></li>
-						</ul>
-					</p>
-				</div>
-			</div>
-
-		</div>
-	</footer>
-	<!-- </div> -->
-
 	</div>
 
 	<div class="gototop js-top">
