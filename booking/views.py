@@ -32,7 +32,11 @@ def login(request):
             return render(request, 'users/login.html', {'msg': msg})
     return render(request, 'users/login.html')
 
+<<<<<<< HEAD
 @login_required(login_url='user_login')
+=======
+
+>>>>>>> 061725eeeb12963ed1e8ff6fe0faf8e4839b6634
 def booking_index(request):
     if request.method == 'POST':
         name = request.POST['name'] 
@@ -44,6 +48,29 @@ def booking_index(request):
         return redirect('trip')
     return render(request, 'booking/booking_index.html')
 
+<<<<<<< HEAD
+def user_login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        print(username, password)
+        user = authenticate(request, username=username, password=password)
+        if user is not None and user.is_active:
+
+            if user.is_superuser:
+                return redirect('cadmin')
+            elif user.is_user:
+                return redirect('booking_index')
+            else:
+                msg = "You are not autherized for this login"
+                return render(request, 'users/login.html', {'msg': msg})
+        else:
+            msg = "Invalid Credentials. Please try again!"
+            return render(request, 'users/login.html', {'msg': msg})
+    return render(request, 'users/login.html')
+    
+=======
+>>>>>>> cd3ba2deeee58a55a08a0e3efc05f15ba23fd762
 
 def trip(request):
     return render(request, 'booking/trip.html')
