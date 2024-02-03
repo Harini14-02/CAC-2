@@ -32,11 +32,7 @@ def login(request):
             return render(request, 'users/login.html', {'msg': msg})
     return render(request, 'users/login.html')
 
-<<<<<<< HEAD
 @login_required(login_url='user_login')
-=======
-
->>>>>>> 061725eeeb12963ed1e8ff6fe0faf8e4839b6634
 def booking_index(request):
     if request.method == 'POST':
         name = request.POST['name'] 
@@ -48,7 +44,6 @@ def booking_index(request):
         return redirect('trip')
     return render(request, 'booking/booking_index.html')
 
-<<<<<<< HEAD
 def user_login(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -69,8 +64,6 @@ def user_login(request):
             return render(request, 'users/login.html', {'msg': msg})
     return render(request, 'users/login.html')
     
-=======
->>>>>>> cd3ba2deeee58a55a08a0e3efc05f15ba23fd762
 
 def trip(request):
     return render(request, 'booking/trip.html')
