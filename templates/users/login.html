@@ -30,10 +30,14 @@
               <ul class="site-menu main-menu js-clone-nav ml-auto " style="font-family : Work Sans, sans-serif; font-size: 16px; font-weight :300;">
                 <li><a href="{% url 'index' %}" class="nav-link">Home</a></li>
                 <li><a href="trip" class="nav-link">Stay</a></li>
-                <li><a href="blog" class="nav-link">Blog</a></li>
+                <li><a href="Blog" class="nav-link">Blog</a></li>
                 <li><a href="contacts" class="nav-link">Feedback</a></li>
+                {% if request.user.is_authenticated %}
+                <li><a href="user_logout" class="nav-link">Logout</a></li>
+                {% else %}
                 <li><a href="user_login" class="nav-link active">Login</a></li>
                 <li><a href="register" class="nav-link">Register</a></li>
+                {% endif  %}
               </ul>
             </nav>
           </div>

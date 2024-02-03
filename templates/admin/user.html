@@ -2,6 +2,16 @@
 {% load static %}
 {% block content %}
     <title>To Destination &mdash; User</title>
+<br>
+    <nav style="padding-left: 1150px;border-left-width: 50px;">
+
+            <a href="cadmin" style="padding-right: 10px;">Admin</a>   |
+            <a href="control" style="padding-right: 10px; padding-left: 10px;" >Blog - Control</a>      |
+             <a href="user" style="padding-right: 10px; padding-left: 10px;" >User</a>      |
+            <a href="index" style="padding-left: 10px;">Log Out</a>
+        </nav><br>
+    <p style="text-align-last: center; font-family: 'Cambria Math',serif; font-size: x-large">User - Dashboard</p>
+<br><br>
 
 
     
@@ -54,17 +64,19 @@
                 </tr>
             </thead>
             <tbody>
+              {% for i in users %}
                 <tr>
                     <td>1</td>
-                    <td>John Doe</td>
-                    <td>john@example.com</td>
-                    <td>Admin</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.is_staff}}</td>
                     <td>
-                        <a href="#">Edit</a> |
+                        <a href="#">Edit</a> 
                         <a href="#">Delete</a>
                     </td>
                 </tr>
                 Add more rows as needed
+                {% endfor %}
             </tbody>
         </table>
     </div>
