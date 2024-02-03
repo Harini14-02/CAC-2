@@ -37,10 +37,6 @@ def login(request):
 @login_required(login_url='login')
 def booking_index(request):
     if request.method == 'POST':
-        name = request.POST['name']
-
-def booking_index(request):
-    if request.method == 'POST':
         name = request.POST['name'] 
         destination = request.POST['destination']
         activity = request.POST['activity']
