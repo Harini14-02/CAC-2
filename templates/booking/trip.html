@@ -46,10 +46,14 @@
               <ul class="site-menu main-menu js-clone-nav ml-auto ">
                 <li><a href="{% url 'index' %}" class="nav-link">Home</a></li>
                 <li><a href="trip" class="nav-link active">Stay</a></li>
-                <li><a href="blog" class="nav-link">Blog</a></li>
+                <li><a href="Blog" class="nav-link">Blog</a></li>
                 <li><a href="contacts" class="nav-link">Feedback</a></li>
+                {% if request.user.is_authenticated %}
+                <li><a href="user_logout" class="nav-link">Logout</a></li>
+                {% else %}
                 <li><a href="user_login" class="nav-link">Login</a></li>
                 <li><a href="register" class="nav-link">Register</a></li>
+                {% endif %}
               </ul>
             </nav>
           </div>
@@ -203,7 +207,7 @@
                             <span>From Rs.2500/night</span>
                             <h3>Superior Room</h3>
                         </div>
-                        <a href="{% url 'user_login' %}" class="line-button">Book Now</a>
+                        <a href="{% url 'booking_index' %}" class="line-button">Book Now</a>
                     </div>
                 </div>
             </div>
@@ -215,7 +219,7 @@
                             <span>From Rs.5000/night</span>
                             <h3>Deluxe Room</h3>
                         </div>
-                        <a href="{% url 'user_login' %}" class="line-button">book now</a>
+                        <a href="{% url 'booking_index' %}" class="line-button">book now</a>
                     </div>
                 </div>
             </div>
@@ -227,7 +231,7 @@
                             <span>From Rs.4000/night</span>
                             <h3>Signature Room</h3>
                         </div>
-                        <a href="{% url 'user_login' %}" class="line-button">book now</a>
+                        <a href="{% url 'booking_index' %}" class="line-button">book now</a>
                     </div>
                 </div>
             </div>
@@ -239,7 +243,7 @@
                             <span>From Rs.4500/night</span>
                             <h3>Couple Room</h3>
                         </div>
-                        <a href="{% url 'user_login' %}" class="line-button">book now</a>
+                        <a href="{% url 'booking_index' %}" class="line-button">book now</a>
                     </div>
                 </div>
             </div>

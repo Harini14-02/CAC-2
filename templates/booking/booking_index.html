@@ -1,28 +1,19 @@
 {% load static %}
 
 <!DOCTYPE HTML>
-<<<<<<< HEAD
 <!--
 	Aesthetic by gettemplates.co
 	Twitter: http://twitter.com/gettemplateco
 	URL: http://gettemplates.co
 -->
-=======
->>>>>>> 8620da8a286561e6dc6636e4ed998b0e3f2f639b
 <html>
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<<<<<<< HEAD
 	<title>Traveler &mdash; Free Website Template, Free HTML5 Template by GetTemplates.co</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" co
 	ntent="Free HTML5 Website Template by GetTemplates.co" />
-=======
-	<title>To Destination &mdash; Book Now</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Free HTML5 Website Template by GetTemplates.co" />
->>>>>>> 8620da8a286561e6dc6636e4ed998b0e3f2f639b
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 	<meta name="author" content="GetTemplates.co" />
 
@@ -85,10 +76,14 @@
                           <ul class="site-menu main-menu js-clone-nav ml-auto ">
                             <li><a href="{% url 'index' %}" class="nav-link" style="font-size:20px;">Home</a></li>
                             <li><a href="trip" class="nav-link" style="font-size:20px;">Stay</a></li>
-                            <li><a href="blog" class="nav-link" style="font-size:20px;">Blog</a></li>
+                            <li><a href="Blog" class="nav-link" style="font-size:20px;">Blog</a></li>
                             <li><a href="contacts" class="nav-link" style="font-size:20px;">Contact</a></li>
+							{% if request.user.is_authenticated %}
+              				<li><a href="user_logout" class="nav-link">Logout</a></li>
+                			{% else %}
                             <li><a href="user_login" class="nav-link" style="font-size:20px;">Login</a></li>
                             <li><a href="register" class="nav-link" style="font-size:20px;">Register</a></li>
+							{% endif %}
                           </ul>
                     </nav>
                 </div>
@@ -112,32 +107,33 @@
 									<div class="tab-content">
 										<div class="tab-content-inner active" data-content="signup">
 											<h3>Book Your Trip</h3>
-											<form action="#">
+											<form method='POST'>
+												{% csrf_token %}
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="fullname">Your Name</label>
-														<input type="text" id="fullname" class="form-control">
+														<input type="text" id="fullname" class="form-control" name="name">
 													</div>
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
-														<label for="activities">Activities</label>
-														<select name="#" id="activities" class="form-control">
-															<option value="">Activities</option>
-															<option value="">Hiking</option>
-															<option value="">Caving</option>
-															<option value="">Swimming</option>
+														<label for="activities" >Activities</label>
+														<select name="activity" id="activities" class="form-control">
+															<option value="Activities">Activities</option>
+															<option value="Hiking">Hiking</option>
+															<option value="Caving">Caving</option>
+															<option value="Swimming">Swimming</option>
 														</select>
 													</div>
 												</div>
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="destination">Destination</label>
-														<select name="#" id="destination" class="form-control">
-															<option value="">Philippines</option>
-															<option value="">USA</option>
-															<option value="">Australia</option>
-															<option value="">Singapore</option>
+														<select name="destination" id="destination" class="form-control">
+															<option value="Philippines">Philippines</option>
+															<option value="USA">USA</option>
+															<option value="Australia">Australia</option>
+															<option value="Singapore">Singapore</option>
 														</select>
 													</div>
 												</div>
@@ -145,13 +141,13 @@
 												<div class="row form-group">
 													<div class="col-md-12">
 														<label for="date-start">Date Travel</label>
-														<input type="text" id="date-start" class="form-control">
+														<input type="text"  class="form-control" name="date">
 													</div>
 												</div>
 
 												<div class="row form-group">
 													<div class="col-md-12">
-														<input type="submit" class="btn btn-primary btn-block" value="Submit">
+														<button type="submit"> SUBMIT</button>
 													</div>
 												</div>
 											</form>	

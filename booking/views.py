@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.db import models
 from .models import booking
 
@@ -31,13 +32,14 @@ def login(request):
             return render(request, 'users/login.html', {'msg': msg})
     return render(request, 'users/login.html')
 
+@login_required(login_url='user_login')
 def booking_index(request):
-    if request.method == 'post':
-        name = request.POST['name']
+    if request.method == 'POST':
+        name = request.POST['name'] 
         destination = request.POST['destination']
         activity = request.POST['activity']
         date = request.POST['date']
-        book = booking(name=name,activity=activity,destination=destination,date=date)
+        book = booking.objects.create(name=name,activity=activity,destination=destination,date=date)
         book.save()
         return redirect('trip')
     return render(request, 'booking/booking_index.html')
@@ -45,3 +47,5 @@ def booking_index(request):
 
 def trip(request):
     return render(request, 'booking/trip.html')
+
+

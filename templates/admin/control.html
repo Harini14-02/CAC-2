@@ -115,13 +115,15 @@
         <div class="container">
             <section class="dashboard-section">
                 <h2>Blog Posts</h2>
+                {% for i in blog %}
                 <div class="blog-post">
                     <h3><a href="#">Post Title</a></h3>
-                    <p>Published on: <span>January 1, 2023</span></p>
-                    <p>Author: <span>Admin</span></p>
-                    <p>Category: <span>Tech</span></p>
-                    <p>Content: Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+                    <!-- <p>Published on: <span>January 1, 2023</span></p> -->
+                    <p>Author: <span>{{ i.username }}</span></p>
+                    <p>Email: <span>{{ i.email }}</span></p>
+                    <p>Content: {{ i.message }}</p>
                 </div>
+                {% endfor %}
                 <!-- Add more blog posts as needed -->
                 <a href="#" class="add-post-btn">Add New Post</a>
             </section>
