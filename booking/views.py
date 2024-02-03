@@ -33,8 +33,7 @@ def login(request):
             return render(request, 'users/login.html', {'msg': msg})
     return render(request, 'users/login.html')
 
-
-@login_required(login_url='login')
+@login_required(login_url='user_login')
 def booking_index(request):
     if request.method == 'POST':
         name = request.POST['name'] 
@@ -65,6 +64,7 @@ def user_login(request):
             msg = "Invalid Credentials. Please try again!"
             return render(request, 'users/login.html', {'msg': msg})
     return render(request, 'users/login.html')
+    
 
 def trip(request):
     return render(request, 'booking/trip.html')
