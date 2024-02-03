@@ -33,21 +33,15 @@ def login(request):
             return render(request, 'users/login.html', {'msg': msg})
     return render(request, 'users/login.html')
 
-<<<<<<< HEAD
+
 @login_required(login_url='login')
 def booking_index(request):
     if request.method == 'POST':
         name = request.POST['name']
-=======
-<<<<<<< HEAD
-@login_required(login_url='user_login')
-=======
 
->>>>>>> 061725eeeb12963ed1e8ff6fe0faf8e4839b6634
 def booking_index(request):
     if request.method == 'POST':
         name = request.POST['name'] 
->>>>>>> 1d6abb0d7a460010003410f27eee97c9a3740050
         destination = request.POST['destination']
         activity = request.POST['activity']
         date = request.POST['date']
