@@ -80,12 +80,6 @@
                 text-align: center;
             }
 
-            nav {
-                {#background-color: #444;#}
-                {#color: #fff;#}
-                padding: 10px;
-                text-align: center;
-            }
 
             .container {
                 margin: 20px;
@@ -156,19 +150,17 @@
         </style>
     </head>
     <body>
-<<<<<<< HEAD
-        <header>
-            <h1>Blog Admin Dashboard</h1>
-        </header>
+        <br>
+        <nav style="padding-left: 1150px;border-left-width: 50px;">
+
+            <a href="cadmin" style="padding-right: 10px;">Admin</a>   |
+            <a href="blog" style="padding-right: 10px; padding-left: 10px;" >Blog</a>      |
+             <a href="user" style="padding-right: 10px; padding-left: 10px;" >User</a>      |
+            <a href="index" style="padding-left: 10px;">Log Out</a>
+        </nav><br>
+    <p style="text-align-last: center; font-family: 'Cambria Math',serif; font-size: x-large">Blog - Dashboard</p>
     
-        <nav>
-            <a href="#">Home</a> | 
-            <a href="#">Posts</a> | 
-            <a href="#">Categories</a> | 
-            <a href="#">Users</a>
-        </nav>
-    
-        <div class="container">
+        <div class="container" style="margin-left: 150px;">
             <section class="dashboard-section">
                 <h2>Blog Posts</h2>
                 {% for i in blog %}
@@ -181,49 +173,13 @@
                 </div>
                 {% endfor %}
                 <!-- Add more blog posts as needed -->
-                <a href="#" class="add-post-btn">Add New Post</a>
+                <a href="#" class="add-post-btn" style="
+                margin-top: 20px;
+                margin-left: 470px;
+            ">Add New Post</a>
             </section>
-    
-            <section class="dashboard-section">
-                <h2>Users</h2>
-                <ul class="user-list">
-                    <li>User 1</li>
-                    <li>User 2</li>
-                    <!-- Add more users as needed -->
-                </ul>
-            </section>
-    
-            <section class="dashboard-section">
-                <h2>Categories</h2>
-                <ul class="category-list">
-                    <li>Category 1</li>
-                    <li>Category 2</li>
-                    <!-- Add more categories as needed -->
-                </ul>
-            </section>
-        </div>
-=======
-<br>
-         <nav style="padding-left: 1150px;border-left-width: 50px;">
 
-            <a href="cadmin" style="padding-right: 10px;">Admin</a>   |
-            <a href="blog" style="padding-right: 10px; padding-left: 10px;" >Blog</a>      |
-             <a href="user" style="padding-right: 10px; padding-left: 10px;" >User</a>      |
-            <a href="index" style="padding-left: 10px;">Log Out</a>
-        </nav><br>
-    <p style="text-align-last: center; font-family: 'Cambria Math',serif; font-size: x-large">Blog - Dashboard</p>
-<br><br>
-         <div class="card" style="left: 410px;">
-            <div class="card-details">
-                <h3 style="text-align-last: center"><a href="#">Post Title</a></h3>
-                <br>
-                <p>Published on: <span>January 1, 2023</span></p>
-                <p>Author: <span>Admin</span></p>
-                <p>Content: Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-            </div>
-             <button class="card-button"><a href="blog#adding">Add New</a></button>
-         </div>
->>>>>>> 061725eeeb12963ed1e8ff6fe0faf8e4839b6634
+
     </body>
     </html>
 {% endblock content %}
