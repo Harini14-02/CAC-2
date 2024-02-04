@@ -150,6 +150,7 @@
         </style>
     </head>
     <body>
+        <br>
         <nav style="padding-left: 1150px;border-left-width: 50px;">
 
             <a href="cadmin" style="padding-right: 10px;">Admin</a>   |
@@ -159,7 +160,7 @@
         </nav><br>
     <p style="text-align-last: center; font-family: 'Cambria Math',serif; font-size: x-large">Blog - Dashboard</p>
     
-        <div class="container">
+        <div class="container" style="margin-left: 150px;">
             <section class="dashboard-section">
                 <h2>Blog Posts</h2>
                 {% for i in blog %}
@@ -172,7 +173,10 @@
                 </div>
                 {% endfor %}
                 <!-- Add more blog posts as needed -->
-                <a href="#" class="add-post-btn">Add New Post</a>
+                <a href="#" class="add-post-btn" style="
+                margin-top: 20px;
+                margin-left: 470px;
+            ">Add New Post</a>
             </section>
 
 
