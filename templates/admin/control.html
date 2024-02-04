@@ -156,6 +156,53 @@
         </style>
     </head>
     <body>
+<<<<<<< HEAD
+        <header>
+            <h1>Blog Admin Dashboard</h1>
+        </header>
+    
+        <nav>
+            <a href="#">Home</a> | 
+            <a href="#">Posts</a> | 
+            <a href="#">Categories</a> | 
+            <a href="#">Users</a>
+        </nav>
+    
+        <div class="container">
+            <section class="dashboard-section">
+                <h2>Blog Posts</h2>
+                {% for i in blog %}
+                <div class="blog-post">
+                    <h3><a href="#">Post Title</a></h3>
+                    <!-- <p>Published on: <span>January 1, 2023</span></p> -->
+                    <p>Author: <span>{{ i.username }}</span></p>
+                    <p>Email: <span>{{ i.email }}</span></p>
+                    <p>Content: {{ i.message }}</p>
+                </div>
+                {% endfor %}
+                <!-- Add more blog posts as needed -->
+                <a href="#" class="add-post-btn">Add New Post</a>
+            </section>
+    
+            <section class="dashboard-section">
+                <h2>Users</h2>
+                <ul class="user-list">
+                    <li>User 1</li>
+                    <li>User 2</li>
+                    <!-- Add more users as needed -->
+                </ul>
+            </section>
+    
+            <section class="dashboard-section">
+                <h2>Categories</h2>
+                <ul class="category-list">
+                    <li>Category 1</li>
+                    <li>Category 2</li>
+                    <!-- Add more categories as needed -->
+                </ul>
+            </section>
+        </div>
+=======
 <br>
          <nav style="padding-left: 1150px;border-left-width: 50px;">
 
@@ -176,6 +223,7 @@
             </div>
              <button class="card-button"><a href="blog#adding">Add New</a></button>
          </div>
+>>>>>>> 061725eeeb12963ed1e8ff6fe0faf8e4839b6634
     </body>
     </html>
 {% endblock content %}

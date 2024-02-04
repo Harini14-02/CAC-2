@@ -64,17 +64,19 @@
                 </tr>
             </thead>
             <tbody>
+              {% for i in users %}
                 <tr>
                     <td>1</td>
-                    <td>John Doe</td>
-                    <td>john@example.com</td>
-                    <td>Admin</td>
+                    <td>{{i.name}}</td>
+                    <td>{{i.email}}</td>
+                    <td>{{i.is_staff}}</td>
                     <td>
-                        <a href="#">Edit</a> |
+                        <a href="#">Edit</a> 
                         <a href="#">Delete</a>
                     </td>
                 </tr>
                 Add more rows as needed
+                {% endfor %}
             </tbody>
         </table>
     </div>

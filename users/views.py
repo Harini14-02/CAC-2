@@ -2,9 +2,10 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.hashers import make_password
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.db import models
+from .models import blog
 
 
 
@@ -30,13 +31,23 @@ def user_login(request):
             return render(request, 'users/login.html', {'msg': msg})
     return render(request, 'users/login.html')
         
-
+def user_logout(request):
+    logout(request)
+    return redirect('user_login')
 
 def index(request):
     return render(request, 'users/index.html')
 
 @login_required(login_url='user_login')
 def form(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        email = request.POST['email']
+
+        message = request.POST['message']
+        blg = blog.objects.create(username=username, email=email, message=message)
+        blg.save()
+        return render(request, 'users/form.html') 
     return render(request, 'users/form.html')
 
 
@@ -45,7 +56,8 @@ def home(request):
 
 
 def control(request):
-    return render(request, 'admin/control.html')
+    Blog = blog.objects.all()
+    return render(request, 'admin/control.html', {'blog':Blog})
 
 
 def user(request):
@@ -58,8 +70,9 @@ def contact(request):
     return render(request, 'users/contacts.html')
 
 
-def blog(request):
-    return render(request, 'users/blog.html')
+def Blog(request):
+    blg = blog.objects.all()
+    return render(request, 'users/blog.html', {'blog':blg})
 
 
 def register(request):

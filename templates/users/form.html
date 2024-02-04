@@ -25,8 +25,12 @@
                 <li><a href="trip" class="nav-link">Stay</a></li>
                 <li><a href="blog" class="nav-link active">Blog</a></li>
                 <li><a href="contacts" class="nav-link">Contact</a></li>
+                {% if request.user.is_authenticated %}
+                <li><a href="user_logout" class="nav-link">Logout</a></li>
+                {% else %}
                 <li><a href="login" class="nav-link">Login</a></li>
                 <li><a href="register" class="nav-link">Register</a></li>
+                {% endif  %}
               </ul>
             </nav>
           </div>
@@ -45,17 +49,17 @@
 <form class="form" id="uploadForm" method="post" style="margin-left: 550px;width: 540px;padding-left: 0px;padding-right: 0px;">
 {% csrf_token %}
         <label>
-            <input required="" placeholder="" type="text" class="input">
+            <input required="" placeholder="" name="username" type="text" class="input">
             <span>username</span>
         </label>
 
     <label>
-        <input required="" placeholder="" type="email" class="input">
+        <input required="" placeholder="" name="email" type="email" class="input">
         <span>email</span>
     </label>
 
     <label>
-        <textarea required="" rows="10" placeholder="" class="input01"></textarea>
+        <textarea required="" rows="10" name="message" placeholder="" class="input01"></textarea>
         <span>message</span>
     </label>
 
