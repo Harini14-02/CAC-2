@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1b0e1381-1a43-4454-ac37-1eadac71631a" name="Changes" comment="Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/control.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/control.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/users/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/users/form.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +96,7 @@
       <workItem from="1706721826852" duration="29000" />
       <workItem from="1706775029423" duration="53000" />
       <workItem from="1706775274006" duration="807000" />
-      <workItem from="1706776253530" duration="13514000" />
+      <workItem from="1706776253530" duration="14515000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <option name="closed" value="true" />
