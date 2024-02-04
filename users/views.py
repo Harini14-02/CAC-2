@@ -22,10 +22,10 @@ def user_login(request):
         if user is not None:
             if user.is_superuser:
                 login(request,user)
-                return render('cadmin')
+                return redirect('cadmin')
             else:
                 login(request,user)
-                return render('index')  
+                return redirect('index')  
         else:
             msg = "Invalid Credentials. Please try again!"
             return render(request, 'users/login.html', {'msg': msg})
