@@ -80,6 +80,12 @@
                 text-align: center;
             }
 
+            nav {
+                {#background-color: #444;#}
+                {#color: #fff;#}
+                padding: 10px;
+                text-align: center;
+                }
 
             .container {
                 margin: 20px;
@@ -150,17 +156,23 @@
         </style>
     </head>
     <body>
-        <br>
-        <nav style="padding-left: 1150px;border-left-width: 50px;">
-
-            <a href="cadmin" style="padding-right: 10px;">Admin</a>   |
-            <a href="blog" style="padding-right: 10px; padding-left: 10px;" >Blog</a>      |
-             <a href="user" style="padding-right: 10px; padding-left: 10px;" >User</a>      |
-            <a href="index" style="padding-left: 10px;">Log Out</a>
-        </nav><br>
-    <p style="text-align-last: center; font-family: 'Cambria Math',serif; font-size: x-large">Blog - Dashboard</p>
+        <header>
+            <h1>Blog Admin Dashboard</h1>
+        </header>
     
-        <div class="container" style="margin-left: 150px;">
+        <nav>
+            <a href="cadmin">Dashboard</a>    | 
+            <a href="user">Users</a>    | 
+            <a href="admin">CAdmin</a>    | 
+            {% if request.user.is_authenticated %}
+            <a href="user_logout" style="padding-right: 10px;">Logout</a>      
+            {% else %}
+            <li><a href="user_login" class="nav-link">Login</a></li>
+            <li><a href="register" class="nav-link">Register</a></li>
+            {% endif  %}
+        </nav>
+    
+        <div class="container">
             <section class="dashboard-section">
                 <h2>Blog Posts</h2>
                 {% for i in blog %}
@@ -173,13 +185,27 @@
                 </div>
                 {% endfor %}
                 <!-- Add more blog posts as needed -->
-                <a href="#" class="add-post-btn" style="
-                margin-top: 20px;
-                margin-left: 470px;
-            ">Add New Post</a>
+                <a href="{% url 'form' %}" class="add-post-btn">Add New Post</a>
             </section>
-
-
+    
+            <!-- <section class="dashboard-section">
+                <h2>Users</h2>
+                <ul class="user-list">
+                    <li>User 1</li>
+                    <li>User 2</li>
+                    Add more users as needed
+                </ul>
+            </section>
+    
+            <section class="dashboard-section">
+                <h2>Categories</h2>
+                <ul class="category-list">
+                    <li>Category 1</li>
+                    <li>Category 2</li>
+                    Add more categories as needed
+                </ul>
+            </section> -->
+        </div>
     </body>
     </html>
 {% endblock content %}
