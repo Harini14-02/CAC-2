@@ -6,6 +6,10 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.db import models
 from .models import blog
+from datetime import datetime, timedelta
+from booking.models import booking
+
+
 
 
 
@@ -61,7 +65,8 @@ def control(request):
 
 
 def user(request):
-    return render(request, 'admin/user.html')
+    register = User.objects.all()
+    return render(request, 'admin/user.html',{'register':register})
 
 def trip(request):
     return render(request, 'booking/trip.html')
@@ -97,6 +102,16 @@ def register(request):
     else:
         return render(request, 'users/register.html')
 
+def deleteusr(request,id):
+    delete = User.objects.get(id=id)
+    delete.delete()
+    return redirect('user')
+
+# def editusr(request,id):
+#     edit = User.objects.get(id=id)
+#     edit.edit()
+#     return redirect('user')
+
 
 def tnc(request):
     return render(request, 'users/tnc.html')
@@ -108,5 +123,24 @@ def tnc(request):
 #     }
 #     return render(request, "users/UserData.html",context)
 # return render(request, 'users/register.html')
+
+ 
+
+
 def dashboard(request):
-    return render(request, 'admin/admin.html')
+    bkng = booking.objects.all()
+    return render(request, 'admin/admin.html', {'bkng' : bkng })
+
+def show_total_blogs(request):
+    total_blogs = blog.objects.count()
+    return render(request, 'admin.html', {'total_blogs': total_blogs})
+
+def total_users(request):
+    total_users = User.objects.count()
+    return render(request, 'admin.html', {'total_users': total_users})
+
+def new_users(request):
+    one_week_ago = datetime.now() - timedelta(days=7)
+    new_users_count = User.objects.filter(date_joined__gte=one_week_ago).count()
+
+    return render(request, 'admin/admin.html', {'new_users_count': new_users_count})

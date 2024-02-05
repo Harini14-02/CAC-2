@@ -3,12 +3,18 @@
 {% block content %}
     <title>To Destination &mdash; User</title>
 <br>
-    <nav style="padding-left: 1150px;border-left-width: 50px;">
+    <nav style="padding-left: 1050px;border-left-width: 50px;">
 
-            <a href="cadmin" style="padding-right: 10px;">Admin</a>   |
+            <a href="cadmin" style="padding-right: 10px;">Dashboard</a>       |
             <a href="control" style="padding-right: 10px; padding-left: 10px;" >Blog - Control</a>      |
-             <a href="user" style="padding-right: 10px; padding-left: 10px;" >User</a>      |
-            <a href="index" style="padding-left: 10px;">Log Out</a>
+             <a href="user" style="padding-right: 10px; padding-left: 10px;" >User</a>         |
+             <a href="admin" style="padding-right: 10px;">CAdmin</a>          |
+             {% if request.user.is_authenticated %}
+            <a href="user_logout" style="padding-right: 10px;">Logout</a>      
+            {% else %}
+            <li><a href="user_login" class="nav-link">Login</a></li>
+            <li><a href="register" class="nav-link">Register</a></li>
+            {% endif  %}
         </nav><br>
     <p style="text-align-last: center; font-family: 'Cambria Math',serif; font-size: x-large">User - Dashboard</p>
 <br><br>
@@ -51,28 +57,30 @@
     
 
     <div class="container">
-        <a href="#" class="add-user-btn">Add User</a>
+        <a href="{% url 'register'%}" class="add-user-btn">Add User</a>
 
         <table>
+          {% csrf_token %}
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Role</th>
+                    <th>Admin</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-              {% for i in users %}
+              {% for i in register %}
+              
                 <tr>
                     <td>1</td>
-                    <td>{{i.name}}</td>
+                    <td>{{i.username}}</td>
                     <td>{{i.email}}</td>
                     <td>{{i.is_staff}}</td>
                     <td>
-                        <a href="#">Edit</a> 
-                        <a href="#">Delete</a>
+                        <!-- <a href="#">Edit</a>  -->
+                        <a href="{% url 'deleteusr' id=i.id %}">Delete</a>
                     </td>
                 </tr>
                 Add more rows as needed
