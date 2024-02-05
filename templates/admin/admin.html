@@ -59,7 +59,7 @@
           </ol>
           <h6 class="font-weight-bolder mb-0">Dashboard</h6>
         </nav>
-        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+        <!-- <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -143,7 +143,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
     </nav>
     <!-- End Navbar -->
     <div class="container-fluid py-4">
@@ -158,7 +158,7 @@
               </div>
               <div class="text-end pt-1">
                 <p class="text-sm mb-0 text-capitalize">New Bookings</p>
-                <h4 class="mb-0">4</h4>
+                <h4 class="mb-0">{{ cbkng }}</h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
@@ -178,7 +178,7 @@
               </div>
               <div class="text-end pt-1">
                 <p class="text-sm mb-0 text-capitalize">New Users</p>
-                <h4 class="mb-0">{{ new_users }}</h4>
+                <h4 class="mb-0">{{ new_users_count }}</h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
@@ -219,7 +219,7 @@
               
               <div class="text-end pt-1">
                 <p class="text-sm mb-0 text-capitalize">Total Blogs</p>
-                <h4 class="mb-0">{{ total_bogs }}</h4>
+                <h4 class="mb-0">{{ total_blogs }}</h4>
               </div>
               
             </div>
@@ -318,44 +318,58 @@
                     </tr>
                   </thead>
                   <tbody>
+                    {% for j in bkng %}
                     <tr>
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
-                            
                           </div>
                           <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm">Paris</h6>
+                            <h6 class="mb-0 text-sm">{{ j.destination }}</h6>
                           </div>
                         </div>
                       </td>
                       <td>
-                        {% for i in booking %}
+                        
                         <div class="avatar-group mt-2">
-                          <p>{{ i.name }}</p>
+                          <p>{{ j.name }}</p>
                         </div>
-                        {% endfor %}
+                        
                       </td>
-                      <td class="align-middle text-center text-sm">
-                        {% for i in booking %}
+                      <!-- <td class="align-middle text-center text-sm">
+                        
                         <div class="avatar-group mt-2">
-                          <p>{{ i.activities }}</p>
+                          <p>{{ j.activities }}</p>
                         </div>
-                        {% endfor %}
-                      </td>
+                        
+                      </td> -->
                       <td class="align-middle">
-                        {% for i in booking %}
+                        
                         <div class="progress-wrapper w-75 mx-auto">
                           <div class="progress-info">
                             <div class="progress-percentage">
-                              <p>{{ i.activities }}</p>
+                              <p>{{ j.activity }}</p>
                             </div>
                           </div>
                           
                         </div>
-                        {% endfor %}
+                        
+                      </td>
+
+                      <td class="align-middle">
+                        
+                        <div class="progress-wrapper w-75 mx-auto">
+                          <div class="progress-info">
+                            <div class="progress-percentage">
+                              <p>{{ j.date }}</p>
+                            </div>
+                          </div>
+                          
+                        </div>
+                        
                       </td>
                     </tr>
+                    {% endfor %}
                     <!-- <tr>
                       <td>
                         <div class="d-flex px-2 py-1">
@@ -731,6 +745,7 @@
                         </div>
                       </td>
                     </tr> -->
+                    -
                   </tbody>
                 </table>
               </div>
