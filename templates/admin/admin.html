@@ -34,11 +34,16 @@
             <span class="nav-link-text ms-1">Users</span>
           </a>
         </li>
-           <li class="nav-item">
-          <a class="nav-link text-white " href="index">
-            <span class="nav-link-text ms-1">Log Out</span>
-          </a>
+        {% if request.user.is_authenticated %} 
+        <li class="nav-item">
+
+          <a class="nav-link text-white" href="user_login">
+          <span class="nav-link-text ms-1">Log Out</span></a>
         </li>
+        {% else %}
+        <li><a href="user_login" class="nav-link">Login</a></li>
+        <li><a href="register" class="nav-link">Register</a></li>
+        {% endif  %}
       </ul>
     <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 370px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 279px;"></div></div></div>
     
@@ -49,8 +54,8 @@
       <div class="container-fluid py-1 px-3">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-            <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
-            <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Dashboard</li>
+            <!-- <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li> -->
+            <!-- <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Dashboard</li> -->
           </ol>
           <h6 class="font-weight-bolder mb-0">Dashboard</h6>
         </nav>
@@ -130,15 +135,7 @@
                           </g>
                         </svg>
                       </div>
-                      <div class="d-flex flex-column justify-content-center">
-                        <h6 class="text-sm font-weight-normal mb-1">
-                          Payment successfully completed
-                        </h6>
-                        <p class="text-xs text-secondary mb-0">
-                          <i class="fa fa-clock me-1"></i>
-                          2 days
-                        </p>
-                      </div>
+                      
                     </div>
                   </a>
                 </li>
@@ -160,8 +157,8 @@
                 </svg>
               </div>
               <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">Money</p>
-                <h4 class="mb-0">Rs.53k</h4>
+                <p class="text-sm mb-0 text-capitalize">New Bookings</p>
+                <h4 class="mb-0">4</h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
@@ -180,8 +177,8 @@
                 </svg>
               </div>
               <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">Today's Users</p>
-                <h4 class="mb-0">23</h4>
+                <p class="text-sm mb-0 text-capitalize">New Users</p>
+                <h4 class="mb-0">{{ new_users }}</h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
@@ -200,8 +197,8 @@
                 </svg>
               </div>
               <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">New Clients</p>
-                <h4 class="mb-0">3,462</h4>
+                <p class="text-sm mb-0 text-capitalize">Total Users</p>
+                <h4 class="mb-0">{{ total_users }}</h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
@@ -219,10 +216,12 @@
                   <path d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2z"/>
                 </svg>
               </div>
+              
               <div class="text-end pt-1">
-                <p class="text-sm mb-0 text-capitalize">Sales</p>
-                <h4 class="mb-0">Rs.103,430</h4>
+                <p class="text-sm mb-0 text-capitalize">Total Blogs</p>
+                <h4 class="mb-0">{{ total_bogs }}</h4>
               </div>
+              
             </div>
             <hr class="dark horizontal my-0">
             <div class="card-footer p-3">
@@ -259,7 +258,7 @@
               </div>
             </div>
             <div class="card-body">
-              <h6 class="mb-0 "> Daily Sales </h6>
+              <h6 class="mb-0 "> Daily Bookings </h6>
               
               
               
@@ -276,7 +275,7 @@
               </div>
             </div>
             <div class="card-body">
-              <h6 class="mb-0 ">Completed Tasks</h6>
+              <h6 class="mb-0 ">Completed Trips</h6>
               
               
               
@@ -331,44 +330,39 @@
                         </div>
                       </td>
                       <td>
+                        {% for i in booking %}
                         <div class="avatar-group mt-2">
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Ryan Tompson">
-                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-1.jpg'%}" alt="team1">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Romina Hadid">
-                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-2.jpg'%}" alt="team2">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Alexander Smith">
-                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-3.jpg'%}" alt="team3">
-                          </a>
-                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Jessica Doe">
-                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-4.jpg'%}" alt="team4">
-                          </a>
+                          <p>{{ i.name }}</p>
                         </div>
+                        {% endfor %}
                       </td>
                       <td class="align-middle text-center text-sm">
-                        <span class="text-xs font-weight-bold">Rs.90,000</span>
+                        {% for i in booking %}
+                        <div class="avatar-group mt-2">
+                          <p>{{ i.activities }}</p>
+                        </div>
+                        {% endfor %}
                       </td>
                       <td class="align-middle">
+                        {% for i in booking %}
                         <div class="progress-wrapper w-75 mx-auto">
                           <div class="progress-info">
                             <div class="progress-percentage">
-                              <span class="text-xs font-weight-bold">90%</span>
+                              <p>{{ i.activities }}</p>
                             </div>
                           </div>
-                          <div class="progress">
-                            <div class="progress-bar bg-gradient-info w-90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                          </div>
+                          
                         </div>
+                        {% endfor %}
                       </td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
                             
                           </div>
-                          <!-- <div class="d-flex flex-column justify-content-center">
+                          <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm">London</h6>
                           </div>
                         </div>
@@ -736,7 +730,7 @@
                           </div>
                         </div>
                       </td>
-                    </tr>
+                    </tr> -->
                   </tbody>
                 </table>
               </div>
@@ -750,7 +744,7 @@
     </div>
   <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 730px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 294px;"></div></div></main>
   <div class="fixed-plugin ps">
-  </div> -->
+  </div>
     
 
   <script src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/popper.min.js.download'%}"></script>
@@ -765,7 +759,7 @@
       data: {
         labels: ["M", "T", "W", "T", "F", "S", "S"],
         datasets: [{
-          label: "Sales",
+          label: "Views",
           tension: 0.4,
           borderWidth: 0,
           borderRadius: 4,
@@ -846,7 +840,7 @@
       data: {
         labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
         datasets: [{
-          label: "Mobile apps",
+          label: "Bookings",
           tension: 0,
           borderWidth: 0,
           pointRadius: 5,
@@ -929,7 +923,7 @@
       data: {
         labels: ["Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
         datasets: [{
-          label: "Mobile apps",
+          label: "Trips",
           tension: 0,
           borderWidth: 0,
           pointRadius: 5,

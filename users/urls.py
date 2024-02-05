@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views
+from .views import show_total_blogs
+from .views import total_users 
 
 urlpatterns = [
     path('', views.index, name="index"),  # never change this code
@@ -15,4 +17,10 @@ urlpatterns = [
     path('user', views.user, name="user"),
     path('form', views.form, name="form"),
     path('control', views.control, name="control"),
+    path('deleteusr/<int:id>/', views.deleteusr, name="deleteusr"),
+    path('total_blogs', show_total_blogs, name='total_blogs'),
+    path('total_users', total_users, name='total_users'),
+    path('new_users/', views.new_users, name='new_users'),
+    # path('editusr/<int:id>/', views.editusr, name="editusr"),
+    
 ]
