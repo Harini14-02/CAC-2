@@ -56,9 +56,7 @@
 
     
 
-    <div class="container">
-        <a href="{% url 'register'%}" class="add-user-btn">Add User</a>
-
+    <div class="container" style="margin-left: 200px;">
         <table>
           {% csrf_token %}
             <thead>
@@ -83,10 +81,10 @@
                         <a href="{% url 'deleteusr' id=i.id %}">Delete</a>
                     </td>
                 </tr>
-                Add more rows as needed
                 {% endfor %}
             </tbody>
-        </table>
+        </table><br><Br>
+        <a href="{% url 'register'%}" class="add-user-btn" style="margin-left: 500px;">Add User</a>
     </div>
 </body>
 <style>
