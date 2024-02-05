@@ -5,7 +5,7 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.db import models
-from .models import blog
+from .models import blog, feedback
 from datetime import datetime, timedelta
 from booking.models import booking
 
@@ -72,7 +72,8 @@ def trip(request):
     return render(request, 'booking/trip.html')
 
 def contact(request):
-    return render(request, 'users/contacts.html')
+    cntct = feedback.objects.all()
+    return render(request, 'users/contacts.html',{'feedback':cntct})
 
 
 def Blog(request):
@@ -85,7 +86,21 @@ def register(request):
 
 
 def cadmin(request):
-    return render(request, 'admin/admin.html')
+    total_blogs = blog.objects.count()
+    bkng = booking.objects.all()
+    cbkng = booking.objects.all().count()
+    total_users = User.objects.all().count()
+    one_week_ago = datetime.now() - timedelta(days=7)
+    new_users_count = User.objects.filter(date_joined__gte=one_week_ago).count()
+    context = {
+        'bkng' : bkng,
+        'cbkng': cbkng,
+        'total_blogs': total_blogs,
+        'total_users': total_users,
+        'new_users_count': new_users_count
+
+    }
+    return render(request, 'admin/admin.html', context)
 
 
 
@@ -128,19 +143,19 @@ def tnc(request):
 
 
 def dashboard(request):
-    bkng = booking.objects.all()
-    return render(request, 'admin/admin.html', {'bkng' : bkng })
+    # bkng = booking.objects.all()
+    return render(request, 'admin/admin.html')
 
-def show_total_blogs(request):
-    total_blogs = blog.objects.count()
-    return render(request, 'admin.html', {'total_blogs': total_blogs})
+# def show_total_blogs(request):
+#     total_blogs = blog.objects.count()
+#     return render(request, 'admin.html', {'total_blogs': total_blogs})
 
-def total_users(request):
-    total_users = User.objects.count()
-    return render(request, 'admin.html', {'total_users': total_users})
+# def total_users(request):
+#     total_users = User.objects.all().count()
+#     return render(request, 'admin.html', {'total_users': total_users})
 
-def new_users(request):
-    one_week_ago = datetime.now() - timedelta(days=7)
-    new_users_count = User.objects.filter(date_joined__gte=one_week_ago).count()
+# def new_users(request):
+#     one_week_ago = datetime.now() - timedelta(days=7)
+#     new_users_count = User.objects.filter(date_joined__gte=one_week_ago).count()
 
-    return render(request, 'admin/admin.html', {'new_users_count': new_users_count})
+#     return render(request, 'admin/admin.html', {'new_users_count': new_users_count})

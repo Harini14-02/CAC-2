@@ -1,4 +1,4 @@
-
+{% extends 'bases/userbase.html' %}
 {% load static %}
 {% block content %}
     <title>To Destination &mdash; Admin</title>
@@ -59,7 +59,7 @@
           </ol>
           <h6 class="font-weight-bolder mb-0">Dashboard</h6>
         </nav>
-        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+        <!-- <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -143,7 +143,7 @@
             </li>
           </ul>
         </div>
-      </div>
+      </div> -->
     </nav>
     <!-- End Navbar -->
     <div class="container-fluid py-4">
@@ -158,7 +158,7 @@
               </div>
               <div class="text-end pt-1">
                 <p class="text-sm mb-0 text-capitalize">New Bookings</p>
-                <h4 class="mb-0">4</h4>
+                <h4 class="mb-0">{{ cbkng }}</h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
@@ -178,7 +178,7 @@
               </div>
               <div class="text-end pt-1">
                 <p class="text-sm mb-0 text-capitalize">New Users</p>
-                <h4 class="mb-0">{{ 'new_users' }}</h4>
+                <h4 class="mb-0">{{ new_users_count }}</h4>
               </div>
             </div>
             <hr class="dark horizontal my-0">
@@ -219,7 +219,7 @@
               
               <div class="text-end pt-1">
                 <p class="text-sm mb-0 text-capitalize">Total Blogs</p>
-                <h4 class="mb-0">{{ total_bogs }}</h4>
+                <h4 class="mb-0">{{ total_blogs }}</h4>
               </div>
               
             </div>
@@ -318,7 +318,101 @@
                     </tr>
                   </thead>
                   <tbody>
+                    {% for j in bkng %}
                     <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">{{ j.destination }}</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        
+                        <div class="avatar-group mt-2">
+                          <p>{{ j.name }}</p>
+                        </div>
+                        
+                      </td>
+                      <!-- <td class="align-middle text-center text-sm">
+                        
+                        <div class="avatar-group mt-2">
+                          <p>{{ j.activities }}</p>
+                        </div>
+                        
+                      </td> -->
+                      <td class="align-middle">
+                        
+                        <div class="progress-wrapper w-75 mx-auto">
+                          <div class="progress-info">
+                            <div class="progress-percentage">
+                              <p>{{ j.activity }}</p>
+                            </div>
+                          </div>
+                          
+                        </div>
+                        
+                      </td>
+
+                      <td class="align-middle">
+                        
+                        <div class="progress-wrapper w-75 mx-auto">
+                          <div class="progress-info">
+                            <div class="progress-percentage">
+                              <p>{{ j.date }}</p>
+                            </div>
+                          </div>
+                          
+                        </div>
+                        
+                      </td>
+                    </tr>
+                    {% endfor %}
+                    <!-- <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">London</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="avatar-group mt-2">
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Ryan Tompson">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-1.jpg'%}" alt="team1">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Romina Hadid">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-2.jpg'%}" alt="team2">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Alexander Smith">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-3.jpg'%}" alt="team3">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Jessica Doe">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-4.jpg'%}" alt="team4">
+                          </a>
+                        </div>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold">Rs.90,000</span>
+                      </td>
+                      <td class="align-middle">
+                        <div class="progress-wrapper w-75 mx-auto">
+                          <div class="progress-info">
+                            <div class="progress-percentage">
+                              <span class="text-xs font-weight-bold">90%</span>
+                            </div>
+                          </div>
+                          <div class="progress">
+                            <div class="progress-bar bg-gradient-info w-90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr><tr>
                       <td>
                         <div class="d-flex px-2 py-1">
                           <div>
@@ -330,32 +424,328 @@
                         </div>
                       </td>
                       <td>
-                        {% for i in booking %}
                         <div class="avatar-group mt-2">
-                          <p>{{ i.name }}</p>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Ryan Tompson">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-1.jpg'%}" alt="team1">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Romina Hadid">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-2.jpg'%}" alt="team2">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Alexander Smith">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-3.jpg'%}" alt="team3">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Jessica Doe">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-4.jpg'%}" alt="team4">
+                          </a>
                         </div>
-                        {% endfor %}
                       </td>
                       <td class="align-middle text-center text-sm">
-                        {% for i in booking %}
-                        <div class="avatar-group mt-2">
-                          <p>{{ i.activities }}</p>
-                        </div>
-                        {% endfor %}
+                        <span class="text-xs font-weight-bold">Rs.90,000</span>
                       </td>
                       <td class="align-middle">
-                        {% for i in booking %}
                         <div class="progress-wrapper w-75 mx-auto">
                           <div class="progress-info">
                             <div class="progress-percentage">
-                              <p>{{ i.activities }}</p>
+                              <span class="text-xs font-weight-bold">90%</span>
                             </div>
                           </div>
-                          
+                          <div class="progress">
+                            <div class="progress-bar bg-gradient-info w-90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
                         </div>
-                        {% endfor %}
+                      </td>
+                    </tr><tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">New York</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="avatar-group mt-2">
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Ryan Tompson">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-1.jpg'%}" alt="team1">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Romina Hadid">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-2.jpg'%}" alt="team2">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Alexander Smith">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-3.jpg'%}" alt="team3">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Jessica Doe">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-4.jpg'%}" alt="team4">
+                          </a>
+                        </div>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold">Rs.90,000</span>
+                      </td>
+                      <td class="align-middle">
+                        <div class="progress-wrapper w-75 mx-auto">
+                          <div class="progress-info">
+                            <div class="progress-percentage">
+                              <span class="text-xs font-weight-bold">90%</span>
+                            </div>
+                          </div>
+                          <div class="progress">
+                            <div class="progress-bar bg-gradient-info w-90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr><tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Bora Bora</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="avatar-group mt-2">
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Ryan Tompson">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-1.jpg'%}" alt="team1">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Romina Hadid">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-2.jpg'%}" alt="team2">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Alexander Smith">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-3.jpg'%}" alt="team3">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Jessica Doe">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-4.jpg'%}" alt="team4">
+                          </a>
+                        </div>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold">Rs.90,000</span>
+                      </td>
+                      <td class="align-middle">
+                        <div class="progress-wrapper w-75 mx-auto">
+                          <div class="progress-info">
+                            <div class="progress-percentage">
+                              <span class="text-xs font-weight-bold">90%</span>
+                            </div>
+                          </div>
+                          <div class="progress">
+                            <div class="progress-bar bg-gradient-info w-90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr><tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Bali</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="avatar-group mt-2">
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Ryan Tompson">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-1.jpg'%}" alt="team1">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Romina Hadid">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-2.jpg'%}" alt="team2">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Alexander Smith">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-3.jpg'%}" alt="team3">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Jessica Doe">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-4.jpg'%}" alt="team4">
+                          </a>
+                        </div>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold">Rs.90,000</span>
+                      </td>
+                      <td class="align-middle">
+                        <div class="progress-wrapper w-75 mx-auto">
+                          <div class="progress-info">
+                            <div class="progress-percentage">
+                              <span class="text-xs font-weight-bold">90%</span>
+                            </div>
+                          </div>
+                          <div class="progress">
+                            <div class="progress-bar bg-gradient-info w-90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr><tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Paris</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="avatar-group mt-2">
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Ryan Tompson">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-1.jpg'%}" alt="team1">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Romina Hadid">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-2.jpg'%}" alt="team2">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Alexander Smith">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-3.jpg'%}" alt="team3">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Jessica Doe">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-4.jpg'%}" alt="team4">
+                          </a>
+                        </div>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold">Rs.90,000</span>
+                      </td>
+                      <td class="align-middle">
+                        <div class="progress-wrapper w-75 mx-auto">
+                          <div class="progress-info">
+                            <div class="progress-percentage">
+                              <span class="text-xs font-weight-bold">90%</span>
+                            </div>
+                          </div>
+                          <div class="progress">
+                            <div class="progress-bar bg-gradient-info w-90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr><tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Paris</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="avatar-group mt-2">
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Ryan Tompson">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-1.jpg'%}" alt="team1">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Romina Hadid">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-2.jpg'%}" alt="team2">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Alexander Smith">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-3.jpg'%}" alt="team3">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Jessica Doe">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-4.jpg'%}" alt="team4">
+                          </a>
+                        </div>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold">Rs.90,000</span>
+                      </td>
+                      <td class="align-middle">
+                        <div class="progress-wrapper w-75 mx-auto">
+                          <div class="progress-info">
+                            <div class="progress-percentage">
+                              <span class="text-xs font-weight-bold">90%</span>
+                            </div>
+                          </div>
+                          <div class="progress">
+                            <div class="progress-bar bg-gradient-info w-90" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
                       </td>
                     </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">India</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="avatar-group mt-2">
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Romina Hadid">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-3.jpg'%}" alt="team8">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Jessica Doe">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-1.jpg'%}" alt="team9">
+                          </a>
+                        </div>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold">Rs.1,00,000</span>
+                      </td>
+                      <td class="align-middle">
+                        <div class="progress-wrapper w-75 mx-auto">
+                          <div class="progress-info">
+                            <div class="progress-percentage">
+                              <span class="text-xs font-weight-bold">100%</span>
+                            </div>
+                          </div>
+                          <div class="progress">
+                            <div class="progress-bar bg-gradient-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                          <div>
+                            
+                          </div>
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Italy</h6>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="avatar-group mt-2">
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Ryan Tompson">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-4.jpg'%}" alt="user1">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Romina Hadid">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-3.jpg'%}" alt="user2">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Alexander Smith">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-4.jpg'%}" alt="user3">
+                          </a>
+                          <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="" data-bs-original-title="Jessica Doe">
+                            <img src="{% static 'admin/Material Dashboard 2 by Creative Tim_files/team-1.jpg'%}" alt="user4">
+                          </a>
+                        </div>
+                      </td>
+                      <td class="align-middle text-center text-sm">
+                        <span class="text-xs font-weight-bold"> Rs.20,500 </span>
+                      </td>
+                      <td class="align-middle">
+                        <div class="progress-wrapper w-75 mx-auto">
+                          <div class="progress-info">
+                            <div class="progress-percentage">
+                              <span class="text-xs font-weight-bold">100%</span>
+                            </div>
+                          </div>
+                          <div class="progress">
+                            <div class="progress-bar bg-gradient-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                          </div>
+                        </div>
+                      </td>
+                    </tr> -->
+                    -
                   </tbody>
                 </table>
               </div>

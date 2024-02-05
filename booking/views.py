@@ -9,8 +9,8 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
-def cadmin(request):
-    return render(request, 'admin/admin.html')
+# def cadmin(request):
+#     return render(request, 'admin/admin.html')
 
 def login(request):
     if request.method == 'POST':
