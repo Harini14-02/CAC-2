@@ -5,7 +5,7 @@ from django.contrib.auth.hashers import make_password
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.db import models
-from .models import blog
+from .models import blog, feedback
 from datetime import datetime, timedelta
 from booking.models import booking
 
@@ -72,7 +72,8 @@ def trip(request):
     return render(request, 'booking/trip.html')
 
 def contact(request):
-    return render(request, 'users/contacts.html')
+    cntct = feedback.objects.all()
+    return render(request, 'users/contacts.html',{'feedback':cntct})
 
 
 def Blog(request):
