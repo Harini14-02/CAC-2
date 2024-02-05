@@ -48,6 +48,12 @@
 <br><br>
 <form class="form" id="uploadForm" method="post" style="margin-left: 550px;width: 540px;padding-left: 0px;padding-right: 0px;">
 {% csrf_token %}
+
+<label>
+  <input required="" placeholder="" name="title" type="text" class="input">
+  <span>title</span>
+</label>
+        
         <label>
             <input required="" placeholder="" name="username" type="text" class="input">
             <span>username</span>
@@ -63,12 +69,10 @@
         <span>message</span>
     </label>
 
+
     <button class="fancy" href="#" onclick="submit()">
       <span class="top-key"></span>
       <span class="text">submit</span>
-        <div id="thankYouMessage" style="display: none;">
-            <p>Thank you for uploading the image!</p>
-        </div>
       <span class="bottom-key-1"></span>
       <span class="bottom-key-2"></span>
     </button>
