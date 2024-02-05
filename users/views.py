@@ -47,9 +47,9 @@ def form(request):
     if request.method == "POST":
         username = request.POST['username']
         email = request.POST['email']
-
+        title = request.POST['title']
         message = request.POST['message']
-        blg = blog.objects.create(username=username, email=email, message=message)
+        blg = blog.objects.create(username=username, email=email, message=message, title=title)
         blg.save()
         return render(request, 'users/form.html') 
     return render(request, 'users/form.html')
