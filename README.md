@@ -1,7 +1,7 @@
 Group 5 :
-  ● HARINI SRUTHI T S – 23122119
-  ● GEORGE THOMAS - 23122116
-  ● NANDHANA RAJEEV - 23122125
+  ● HARINI SRUTHI T S – 23122119                                                              
+  ● GEORGE THOMAS - 23122116                                                                                              
+  ● NANDHANA RAJEEV - 23122125                                                                                                    
 
 About The Project :
     Our project is based on travel company, highlighting the services and destinations, building credibility through reviews, and drive users to contact  or browse trips to book.
