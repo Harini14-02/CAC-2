@@ -61,33 +61,20 @@
         </div>
       </div>
       
-      <!-- <div class="row">
-        {% for i in blog %}
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="post-entry-1 h-100">
-            <div class="post-entry-1-contents">
-
-              <h2>{{ i.username }}</h2>
-              <span class="meta d-inline-block mb-3">July 17, 2023 <span class="mx-2"></span> </span>
-              <p>{{i.message}}</p>
-
-            </div>
-          </div>
-        </div>
-        {% endfor %} -->
+      
         <div class="row">
-          {% for i in blog %}
+        {% for i in blog %}
         <div class="col-lg-4 mb-4">
           <div class="post-entry-1 h-100">
             <div class="post-entry-1-contents" style="padding-right: 0px; padding-left: 0px; padding-bottom: 10px; padding-top: 10px; margin-right: 10px;">
               <h2>{{ i.title }}</h2>
-              <span class="meta d-inline-block mb-3">{{ i.username }} - {{ i.email }}<span class="mx-2"></span></span>
+              <span class="meta d-inline-block mb-3">{{ i.username }} - {{ i.email }}<span class="mx-2"></span>
               <p style="text-align: justify;">{{i.message}}.</p>
             </div>
           </div>
         </div>
         {% endfor %}
-      <div class="col-lg-4 mb-4">
+      <!-- <div class="col-lg-4 mb-4">
         <div class="post-entry-1 h-100">
           <div class="post-entry-1-contents" style="padding-right: 0px; padding-left: 0px; padding-bottom: 10px; padding-top: 10px; margin-right: 10px;">
             <h2>Vibrant Tapestry of Tokyo</h2>
@@ -95,7 +82,7 @@
             <p style="text-align: justify;">Tokyo, the pulsating heart of Japan, is a city that effortlessly blends tradition with cutting-edge innovation.We embark on a virtual journey through the diverse landscapes that make Tokyo a captivating destination.</p>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

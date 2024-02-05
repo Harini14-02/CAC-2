@@ -71,9 +71,22 @@ def user(request):
 def trip(request):
     return render(request, 'booking/trip.html')
 
-def contact(request):
-    cntct = feedback.objects.all()
-    return render(request, 'users/contacts.html',{'feedback':cntct})
+def contacts(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        contact = request.POST['contact']
+        message = request.POST['message']
+        ctct = feedback(name=name, email=email,contact=contact, message=message)
+        ctct.save()
+        return redirect('contacts')
+    return render(request, 'users/contacts.html')
+
+# def contacts(request):
+#     ctct = feedback.objects.all()
+#     return render(request, 'users/contacts.html', {'feedback':ctct})
+
+
 
 
 def Blog(request):
@@ -86,6 +99,7 @@ def register(request):
 
 
 def cadmin(request):
+    ctct = feedback.objects.all()
     total_blogs = blog.objects.count()
     bkng = booking.objects.all()
     cbkng = booking.objects.all().count()
@@ -97,7 +111,8 @@ def cadmin(request):
         'cbkng': cbkng,
         'total_blogs': total_blogs,
         'total_users': total_users,
-        'new_users_count': new_users_count
+        'new_users_count': new_users_count,
+        'ctct':ctct,
 
     }
     return render(request, 'admin/admin.html', context)

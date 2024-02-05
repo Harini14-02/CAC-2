@@ -69,28 +69,32 @@
                 EMAIL ID : harini.sruthi@msds.christuniversity.in</div>
           </div>
           <div class="screen-body-item">
+            <form method="POST" action="{% url 'contacts' %}">
             <div class="app-form">
+              {% csrf_token %}
               <div class="app-form-group">
-                <input class="app-form-control" placeholder="NAME">
+                <input class="app-form-control" name="name" placeholder="NAME">
               </div>
               <div class="app-form-group">
-                <input class="app-form-control" placeholder="EMAIL">
+                <input class="app-form-control" name="email" placeholder="EMAIL">
               </div>
               <div class="app-form-group">
-                <input class="app-form-control" placeholder="CONTACT NO">
+                <input class="app-form-control" name="contact" placeholder="CONTACT NO">
               </div>
               <div class="app-form-group message">
-                <input class="app-form-control" placeholder="FEEDBACK">
+                <input class="app-form-control" name="message" placeholder="FEEDBACK">
               </div>
               <div class="app-form-group buttons">
-                <input type="submit" value="Send" class="btn btn-primary">
+                <input type="Submit" value="Send" class="btn btn-primary">
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </form>
   </div>
+  
 <style>
     *, *:before, *:after {
   box-sizing: border-box;
